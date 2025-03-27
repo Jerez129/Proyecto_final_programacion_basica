@@ -23,6 +23,7 @@ namespace Capa_Datos.ClasesDAL
                 conexion.CerrarConexion();
 
                 return resultado;  // Si no hay coincidencia, 'resultado' será null
+
             }
         }
 
