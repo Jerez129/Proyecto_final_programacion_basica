@@ -9,22 +9,7 @@ namespace Capa_Entidades.Empleado
 {
     public class Empleado : EntidadBase
     {
-        public int IdEmpleado { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Cedula { get; set; }
-        public string Correo { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public string Cargo { get; set; }
-        public string Telefono { get; set; }
-        public DateTime FechaIngreso { get; set; }
-        public int IdDepartamento { get; set; }
-        public int IdDireccion { get; set; }
-        public int IdGenero { get; set; }
-
-        // Propiedades de navegación (para relaciones) 
-        public Departamento Departamento { get; set; }
-        public Direccion Direccion { get; set; }
+ 
 
         public int CalcularEdad()
         {

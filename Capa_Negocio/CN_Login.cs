@@ -13,6 +13,7 @@ namespace Capa_Negocio
 {
     public class CN_Login
     {
+
         public class UsuarioNegocio
         {
             private UsuariosDAL usuariosDAL = new UsuariosDAL();
