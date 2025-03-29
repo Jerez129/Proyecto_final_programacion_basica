@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa_Entidades.Empleado
+namespace Capa_Datos.ClasesDAL
 {
-    public class DireccionDAL : EntidadBase
+    
+    public class DireccionDAL
     {
         public int IdDireccion { get; set; }
         public string Pais { get; set; }
@@ -16,14 +17,8 @@ namespace Capa_Entidades.Empleado
         public string Barrio { get; set; }
         public string Residencia { get; set; }
 
-        public override bool EsValido()
-        {
-            if (string.IsNullOrEmpty(Pais) || string.IsNullOrEmpty(Provincia) || string.IsNullOrEmpty(Sector) || string.IsNullOrEmpty(Calle) || string.IsNullOrEmpty(Residencia))
-                return false;
-
-            return true;
-        }
-
 
     }
+
 }
+

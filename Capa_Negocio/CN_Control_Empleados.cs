@@ -1,4 +1,4 @@
-﻿using Capa_Datos.ClasesDAL;
+﻿using Capa_Datos.ClasesDAL.Empleado;
 using Capa_Negocio.Interfaces;
 using System;
 using System.Collections.Generic;

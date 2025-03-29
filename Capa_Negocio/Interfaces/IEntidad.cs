@@ -1,4 +1,4 @@
-﻿namespace Capa_Entidades.Interfaces
+﻿namespace Capa_Negocio.Interfaces
 {
     public interface IEntidad
     {

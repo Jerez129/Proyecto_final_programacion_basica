@@ -1,11 +1,11 @@
-﻿using Capa_Entidades.Interfaces;
+﻿using Capa_Negocio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa_Entidades
+namespace Capa_Negocio.Interfaces
 {
     public abstract class EntidadBase : IEntidad
     {
@@ -20,3 +20,5 @@ namespace Capa_Entidades
 
     }
 }
+
+

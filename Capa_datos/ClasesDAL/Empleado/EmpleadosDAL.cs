@@ -34,8 +34,8 @@ namespace Capa_Datos.ClasesDAL
         public int IdGenero { get; set; }
 
         // Propiedades de navegación (para relaciones) 
-        public Departamento Departamento { get; set; }
-        public Direccion Direccion { get; set; }
+        public DepartamentoDAL Departamento { get; set; }
+        public DireccionDAL Direccion { get; set; }
 
         public DataTable Mostrar()
         //TRANSACT SQL
@@ -50,14 +50,14 @@ namespace Capa_Datos.ClasesDAL
 
             //PROCEDIMIENTO
         }
-        public void Insertar(string nombre, string apellido, string cedula, string correo, string fechanacimiento, string cargo, string telefono, string fechaingreso, string iddepartamento, string iddireccion, string genero)
+        public void Insertar(string nombre, string apellido, string cedula, string correo, string fechanacimiento, string cargo, string telefono, string fechaingreso, string iddepartamento, string iddireccion, string idgenero)
         {
             //PROCEDIMIENTO
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarEmpleados";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Nombre ", nombre);
-            comando.Parameters.AddWithValue("@Apellido", telefono);
+            comando.Parameters.AddWithValue("@Apellido", apellido);
             comando.Parameters.AddWithValue("@Cedula", cedula);
             comando.Parameters.AddWithValue("@Correo", correo);
             comando.Parameters.AddWithValue("@FechaNacimiento", fechanacimiento);
@@ -66,7 +66,7 @@ namespace Capa_Datos.ClasesDAL
             comando.Parameters.AddWithValue("@FechaIngreso", fechaingreso);
             comando.Parameters.AddWithValue("@id_Departamento", iddepartamento);
             comando.Parameters.AddWithValue("@id_Direccion", iddireccion);
-            comando.Parameters.AddWithValue("@id_Genero", genero);
+            comando.Parameters.AddWithValue("@id_Genero", idgenero);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
