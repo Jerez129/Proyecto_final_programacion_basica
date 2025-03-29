@@ -1,4 +1,4 @@
-﻿using Capa_Datos.ClasesDAL.Empleado;
+﻿using Capa_Datos.ClasesDAL;
 using Capa_Negocio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,21 +18,20 @@ namespace Capa_Negocio
             return CN_Empleados.Mostrar();
         }
 
-        public void Insertar(string nombre, string apellido, string cedula, string correo, string fechanacimiento, string cargo, string telefono, string fechaingreso, string iddepartamento, string iddireccion, string genero)
+        public void Insertar(EmpleadosDAL empleado)
         {
-            CN_Empleados.Insertar(nombre, apellido, cedula, correo, fechanacimiento, cargo, telefono, fechaingreso, iddepartamento, iddireccion, genero);
+        
+            CN_Empleados.Insertar(empleado); 
         }
 
-        public void Editar(int id, string nombre, string apellido, string cedula, string correo, string fechanacimiento, string cargo, string telefono, string fechaingreso, string iddepartamento, string iddireccion, string genero)
+        public void Editar(EmpleadosDAL empleado)
         {
-            CN_Empleados.Editar(id, nombre, apellido, cedula, correo, fechanacimiento, cargo, telefono, fechaingreso, iddepartamento, iddireccion, genero);
+            CN_Empleados.Editar(empleado);
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(EmpleadosDAL empleado)
         {
-            CN_Empleados.Eliminar(id);
+            CN_Empleados.Eliminar(empleado);
         }
-
-
     }
 }

@@ -77,5 +77,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

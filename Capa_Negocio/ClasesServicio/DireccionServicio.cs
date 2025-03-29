@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
+/*
 namespace Capa_Negocio.ClasesServicio
 {
     public class DireccionServicio : EntidadBase
     {
 
+        //pendiente de cambiar
+        
 
         public override bool EsValido()
         {
@@ -20,7 +22,8 @@ namespace Capa_Negocio.ClasesServicio
 
             return true;
         }
-
+        
 
     }
 }
+*/

@@ -50,58 +50,60 @@ namespace Capa_Datos.ClasesDAL
 
             //PROCEDIMIENTO
         }
-        public void Insertar(string nombre, string apellido, string cedula, string correo, string fechanacimiento, string cargo, string telefono, string fechaingreso, string iddepartamento, string iddireccion, string idgenero)
+        public void Insertar(EmpleadosDAL Empleado)
         {
             //PROCEDIMIENTO
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarEmpleados";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@Nombre ", nombre);
-            comando.Parameters.AddWithValue("@Apellido", apellido);
-            comando.Parameters.AddWithValue("@Cedula", cedula);
-            comando.Parameters.AddWithValue("@Correo", correo);
-            comando.Parameters.AddWithValue("@FechaNacimiento", fechanacimiento);
-            comando.Parameters.AddWithValue("@Cargo", cargo);
-            comando.Parameters.AddWithValue("@Telefono", telefono);
-            comando.Parameters.AddWithValue("@FechaIngreso", fechaingreso);
-            comando.Parameters.AddWithValue("@id_Departamento", iddepartamento);
-            comando.Parameters.AddWithValue("@id_Direccion", iddireccion);
-            comando.Parameters.AddWithValue("@id_Genero", idgenero);
+            comando.Parameters.AddWithValue("@Nombre", Empleado.Nombre);
+            comando.Parameters.AddWithValue("@Apellido", Empleado.Apellido);
+            comando.Parameters.AddWithValue("@Cedula", Empleado.Cedula);
+            comando.Parameters.AddWithValue("@Correo", Empleado.Correo);
+            comando.Parameters.AddWithValue("@FechaNacimiento", Empleado.FechaNacimiento);
+            comando.Parameters.AddWithValue("@Cargo", Empleado.Cargo);
+            comando.Parameters.AddWithValue("@Telefono", Empleado.Telefono);
+            comando.Parameters.AddWithValue("@FechaIngreso", Empleado   .FechaIngreso);
+            comando.Parameters.AddWithValue("@id_Departamento", Empleado.IdDepartamento);
+            comando.Parameters.AddWithValue("@id_Direccion", Empleado.IdDireccion);
+            comando.Parameters.AddWithValue("@id_Genero", Empleado.IdGenero);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
 
-        public void Editar(int id, string nombre, string apellido, string cedula, string correo, string fechanacimiento, string cargo, string telefono, string fechaingreso, string iddepartamento, string iddireccion, string genero)
+        public void Editar(EmpleadosDAL Empleado)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@id_Empleado", id);
-            comando.Parameters.AddWithValue("@Nombre ", nombre);
-            comando.Parameters.AddWithValue("@Apellido", telefono);
-            comando.Parameters.AddWithValue("@Cedula", cedula);
-            comando.Parameters.AddWithValue("@Correo", correo);
-            comando.Parameters.AddWithValue("@FechaNacimiento", fechanacimiento);
-            comando.Parameters.AddWithValue("@Cargo", cargo);
-            comando.Parameters.AddWithValue("@Telefono", telefono);
-            comando.Parameters.AddWithValue("@FechaIngreso", fechaingreso);
-            comando.Parameters.AddWithValue("@id_Departamento", iddepartamento);
-            comando.Parameters.AddWithValue("@id_Direccion", iddireccion);
-            comando.Parameters.AddWithValue("@id_Genero", genero);
+            comando.Parameters.AddWithValue("@id_Empleado", Empleado.IdEmpleado);
+            comando.Parameters.AddWithValue("@Nombre", Empleado.Nombre);
+            comando.Parameters.AddWithValue("@Apellido", Empleado.Apellido);
+            comando.Parameters.AddWithValue("@Cedula", Empleado.Cedula);
+            comando.Parameters.AddWithValue("@Correo", Empleado .Correo);
+            comando.Parameters.AddWithValue("@FechaNacimiento", Empleado.FechaNacimiento);
+            comando.Parameters.AddWithValue("@Cargo", Empleado.Cargo);
+            comando.Parameters.AddWithValue("@Telefono", Empleado.Telefono);
+            comando.Parameters.AddWithValue("@FechaIngreso", Empleado.FechaIngreso);
+            comando.Parameters.AddWithValue("@id_Departamento", Empleado.IdDepartamento);
+            comando.Parameters.AddWithValue("@id_Direccion", Empleado.IdDireccion);
+            comando.Parameters.AddWithValue("@id_Genero", Empleado.IdGenero);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
-        public void Eliminar(int id)
+        public void Eliminar(EmpleadosDAL Empleado)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EliminarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@id_Empleado", Empleado.IdEmpleado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
 
         }
+
+ 
     }
 }
