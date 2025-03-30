@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//comprobacion de datos  con metodo virtual
 namespace Capa_Negocio.Interfaces
 {
     public abstract class EntidadBase : IEntidad
