@@ -1,4 +1,6 @@
 using Capa_Presentacion.FrmConsulta;
+using Capa_Presentacion.FrmsControldeasencias;
+using Capa_Presentacion.FrmsControldeempleados;
 
 namespace Capa_Presentacion_Proyecto_Final
 {
@@ -13,7 +15,7 @@ namespace Capa_Presentacion_Proyecto_Final
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmListaDeEmpleados());
+            Application.Run(new FrmPrincipal());
         }
     }
 }

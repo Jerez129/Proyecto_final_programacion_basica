@@ -47,6 +47,17 @@
             btnCerrarsesion = new Button();
             btnAcercade = new Button();
             panel2 = new Panel();
+            lblMesAño = new Label();
+            lblDomingo = new Label();
+            lblViernes = new Label();
+            lblJueves = new Label();
+            lblSabado = new Label();
+            lblMiercoles = new Label();
+            lblMartes = new Label();
+            lblLunes = new Label();
+            btnAtras = new Button();
+            btnSiguiente = new Button();
+            flpContenedordedias = new FlowLayoutPanel();
             btnMenuprincipal = new Button();
             pnlMenuPrincipal.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -65,7 +76,7 @@
             pnlMenuPrincipal.Dock = DockStyle.Left;
             pnlMenuPrincipal.Location = new Point(0, 0);
             pnlMenuPrincipal.Name = "pnlMenuPrincipal";
-            pnlMenuPrincipal.Size = new Size(250, 545);
+            pnlMenuPrincipal.Size = new Size(250, 688);
             pnlMenuPrincipal.TabIndex = 0;
             pnlMenuPrincipal.Visible = false;
             // 
@@ -122,6 +133,7 @@
             btnControldeausencias.TabIndex = 4;
             btnControldeausencias.Text = "Control de ausencias";
             btnControldeausencias.UseVisualStyleBackColor = true;
+            btnControldeausencias.Click += btnControldeausencias_Click;
             // 
             // btnControldenomina
             // 
@@ -238,13 +250,123 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(lblMesAño);
+            panel2.Controls.Add(lblDomingo);
+            panel2.Controls.Add(lblViernes);
+            panel2.Controls.Add(lblJueves);
+            panel2.Controls.Add(lblSabado);
+            panel2.Controls.Add(lblMiercoles);
+            panel2.Controls.Add(lblMartes);
+            panel2.Controls.Add(lblLunes);
+            panel2.Controls.Add(btnAtras);
+            panel2.Controls.Add(btnSiguiente);
+            panel2.Controls.Add(flpContenedordedias);
             panel2.Controls.Add(btnMenuprincipal);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(250, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(645, 545);
+            panel2.Size = new Size(1194, 688);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // lblMesAño
+            // 
+            lblMesAño.AutoSize = true;
+            lblMesAño.Location = new Point(919, 141);
+            lblMesAño.Name = "lblMesAño";
+            lblMesAño.Size = new Size(74, 20);
+            lblMesAño.TabIndex = 9;
+            lblMesAño.Text = "MES AÑO";
+            // 
+            // lblDomingo
+            // 
+            lblDomingo.AutoSize = true;
+            lblDomingo.Location = new Point(746, 166);
+            lblDomingo.Name = "lblDomingo";
+            lblDomingo.Size = new Size(29, 20);
+            lblDomingo.TabIndex = 6;
+            lblDomingo.Text = "Do";
+            // 
+            // lblViernes
+            // 
+            lblViernes.AutoSize = true;
+            lblViernes.Location = new Point(1071, 166);
+            lblViernes.Name = "lblViernes";
+            lblViernes.Size = new Size(22, 20);
+            lblViernes.TabIndex = 8;
+            lblViernes.Text = "Vi";
+            // 
+            // lblJueves
+            // 
+            lblJueves.AutoSize = true;
+            lblJueves.Location = new Point(1007, 166);
+            lblJueves.Name = "lblJueves";
+            lblJueves.Size = new Size(22, 20);
+            lblJueves.TabIndex = 7;
+            lblJueves.Text = "Ju";
+            // 
+            // lblSabado
+            // 
+            lblSabado.AutoSize = true;
+            lblSabado.Location = new Point(1136, 166);
+            lblSabado.Name = "lblSabado";
+            lblSabado.Size = new Size(25, 20);
+            lblSabado.TabIndex = 7;
+            lblSabado.Text = "Sa";
+            // 
+            // lblMiercoles
+            // 
+            lblMiercoles.AutoSize = true;
+            lblMiercoles.Location = new Point(942, 166);
+            lblMiercoles.Name = "lblMiercoles";
+            lblMiercoles.Size = new Size(26, 20);
+            lblMiercoles.TabIndex = 6;
+            lblMiercoles.Text = "Mi";
+            // 
+            // lblMartes
+            // 
+            lblMartes.AutoSize = true;
+            lblMartes.Location = new Point(874, 166);
+            lblMartes.Name = "lblMartes";
+            lblMartes.Size = new Size(30, 20);
+            lblMartes.TabIndex = 5;
+            lblMartes.Text = "Ma";
+            // 
+            // lblLunes
+            // 
+            lblLunes.AutoSize = true;
+            lblLunes.Location = new Point(815, 166);
+            lblLunes.Name = "lblLunes";
+            lblLunes.Size = new Size(24, 20);
+            lblLunes.TabIndex = 4;
+            lblLunes.Text = "Lu";
+            // 
+            // btnAtras
+            // 
+            btnAtras.Location = new Point(989, 475);
+            btnAtras.Name = "btnAtras";
+            btnAtras.Size = new Size(94, 29);
+            btnAtras.TabIndex = 3;
+            btnAtras.Text = "Atrás";
+            btnAtras.UseVisualStyleBackColor = true;
+            btnAtras.Click += btnAtras_Click;
+            // 
+            // btnSiguiente
+            // 
+            btnSiguiente.Location = new Point(1088, 475);
+            btnSiguiente.Name = "btnSiguiente";
+            btnSiguiente.Size = new Size(94, 29);
+            btnSiguiente.TabIndex = 2;
+            btnSiguiente.Text = "Siguiente\r\n";
+            btnSiguiente.UseVisualStyleBackColor = true;
+            btnSiguiente.Click += btnSiguiente_Click;
+            // 
+            // flpContenedordedias
+            // 
+            flpContenedordedias.Location = new Point(730, 189);
+            flpContenedordedias.Name = "flpContenedordedias";
+            flpContenedordedias.Size = new Size(452, 280);
+            flpContenedordedias.TabIndex = 1;
             // 
             // btnMenuprincipal
             // 
@@ -260,11 +382,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(895, 545);
+            ClientSize = new Size(1444, 688);
             Controls.Add(panel2);
             Controls.Add(pnlMenuPrincipal);
             Name = "FrmPrincipal";
             Text = "FrmPrincipal";
+            Load += FrmPrincipal_Load;
             pnlMenuPrincipal.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             pnlbtnEmpleados.ResumeLayout(false);
@@ -274,6 +397,7 @@
             panel3.ResumeLayout(false);
             pnlSistema.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -303,5 +427,16 @@
         private Panel pnlSistema;
         private Button btnCerrarsesion;
         private Button btnAcercade;
+        private Label lblDomingo;
+        private Label lblViernes;
+        private Label lblJueves;
+        private Label lblSabado;
+        private Label lblMiercoles;
+        private Label lblMartes;
+        private Label lblLunes;
+        private Button btnAtras;
+        private Button btnSiguiente;
+        private FlowLayoutPanel flpContenedordedias;
+        private Label lblMesAño;
     }
 }

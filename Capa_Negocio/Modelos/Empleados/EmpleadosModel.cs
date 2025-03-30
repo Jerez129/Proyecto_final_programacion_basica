@@ -6,12 +6,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Capa_Datos.ClasesDAL;
 
 
-namespace Capa_Datos.ClasesDAL
+namespace Capa_Negocio
 {
 
-    public class EmpleadosDAL
+    public class EmpleadosModel
     {
         private CD_Conexion conexion = new CD_Conexion();
         //esto es para leer data de las tablas
@@ -32,9 +33,6 @@ namespace Capa_Datos.ClasesDAL
         public int IdDireccion { get; set; }
         public int IdGenero { get; set; }
 
-        // Propiedades de navegación (para relaciones) 
-        public DepartamentoDAL Departamento { get; set; }
-        public DireccionDAL Direccion { get; set; }
 
         public DataTable Mostrar()
         //TRANSACT SQL
@@ -63,7 +61,7 @@ namespace Capa_Datos.ClasesDAL
 
             //PROCEDIMIENTO
         }
-        public void Insertar(EmpleadosDAL Empleado)
+        public void Insertar(EmpleadosModel Empleado)
         {
             //PROCEDIMIENTO
             comando.Connection = conexion.AbrirConexion();
@@ -84,10 +82,10 @@ namespace Capa_Datos.ClasesDAL
             comando.Parameters.Clear();
         }
 
-        public void Editar(EmpleadosDAL Empleado)
+        public void Editar(EmpleadosModel Empleado)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarUsuarios";
+            comando.CommandText = "ActualizarEmpleado";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id_Empleado", Empleado.IdEmpleado);
             comando.Parameters.AddWithValue("@Nombre", Empleado.Nombre);
@@ -104,10 +102,10 @@ namespace Capa_Datos.ClasesDAL
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
-        public void Eliminar(EmpleadosDAL Empleado)
+        public void Eliminar(EmpleadosModel Empleado)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarUsuarios";
+            comando.CommandText = "EliminarEmpleados";
             comando.CommandType = CommandType.StoredProcedure;
 
             comando.Parameters.AddWithValue("@id_Empleado", Empleado.IdEmpleado);

@@ -41,8 +41,6 @@
             txtApellido = new TextBox();
             txtCedula = new TextBox();
             txtCorreo = new TextBox();
-            txtTelefono = new TextBox();
-            txtFechaIngreso = new TextBox();
             cbDepartamento = new ComboBox();
             cbDireccion = new ComboBox();
             cbGenero = new ComboBox();
@@ -51,7 +49,9 @@
             cbCargo = new ComboBox();
             lblCargo = new Label();
             lblFechaNacimiento = new Label();
-            txtFechaNacimiento = new TextBox();
+            txtTelefono = new TextBox();
+            dtpFechanacimiento = new DateTimePicker();
+            dtpFechaingreso = new DateTimePicker();
             SuspendLayout();
             // 
             // lblNombre
@@ -163,20 +163,6 @@
             txtCorreo.Size = new Size(233, 27);
             txtCorreo.TabIndex = 14;
             // 
-            // txtTelefono
-            // 
-            txtTelefono.Location = new Point(140, 357);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(233, 27);
-            txtTelefono.TabIndex = 15;
-            // 
-            // txtFechaIngreso
-            // 
-            txtFechaIngreso.Location = new Point(140, 461);
-            txtFechaIngreso.Name = "txtFechaIngreso";
-            txtFechaIngreso.Size = new Size(233, 27);
-            txtFechaIngreso.TabIndex = 16;
-            // 
             // cbDepartamento
             // 
             cbDepartamento.FormattingEnabled = true;
@@ -190,7 +176,7 @@
             cbDireccion.FormattingEnabled = true;
             cbDireccion.Location = new Point(511, 245);
             cbDireccion.Name = "cbDireccion";
-            cbDireccion.Size = new Size(190, 28);
+            cbDireccion.Size = new Size(347, 28);
             cbDireccion.TabIndex = 18;
             // 
             // cbGenero
@@ -219,10 +205,12 @@
             btnCerrarvisualregistraremplead.TabIndex = 21;
             btnCerrarvisualregistraremplead.Text = "Cerrar";
             btnCerrarvisualregistraremplead.UseVisualStyleBackColor = true;
+            btnCerrarvisualregistraremplead.Click += btnCerrarvisualregistraremplead_Click;
             // 
             // cbCargo
             // 
             cbCargo.FormattingEnabled = true;
+            cbCargo.Items.AddRange(new object[] { "Gerente de Distribución", "Gerente de Logística", "Supervisor de Distribución", "Supervisor de Almacén", "Auxiliar de Distribución", "Chofer de Distribución", "Técnico de Productividad", "Técnico en Logística", "Coordinador de Seguridad Industrial", "Técnico en Control de Calidad", "Técnico de gente y gestión ", "Gerente de Ventas", "Asesor de ventas" });
             cbCargo.Location = new Point(511, 131);
             cbCargo.Name = "cbCargo";
             cbCargo.Size = new Size(190, 28);
@@ -246,19 +234,36 @@
             lblFechaNacimiento.TabIndex = 24;
             lblFechaNacimiento.Text = "Fecha Nacimiento";
             // 
-            // txtFechaNacimiento
+            // txtTelefono
             // 
-            txtFechaNacimiento.Location = new Point(140, 415);
-            txtFechaNacimiento.Name = "txtFechaNacimiento";
-            txtFechaNacimiento.Size = new Size(233, 27);
-            txtFechaNacimiento.TabIndex = 25;
+            txtTelefono.Location = new Point(140, 357);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(233, 27);
+            txtTelefono.TabIndex = 15;
+            // 
+            // dtpFechanacimiento
+            // 
+            dtpFechanacimiento.Format = DateTimePickerFormat.Short;
+            dtpFechanacimiento.Location = new Point(197, 416);
+            dtpFechanacimiento.Name = "dtpFechanacimiento";
+            dtpFechanacimiento.Size = new Size(112, 27);
+            dtpFechanacimiento.TabIndex = 25;
+            // 
+            // dtpFechaingreso
+            // 
+            dtpFechaingreso.Format = DateTimePickerFormat.Short;
+            dtpFechaingreso.Location = new Point(197, 464);
+            dtpFechaingreso.Name = "dtpFechaingreso";
+            dtpFechaingreso.Size = new Size(112, 27);
+            dtpFechaingreso.TabIndex = 26;
             // 
             // FrmVisualregistrarempleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(933, 601);
-            Controls.Add(txtFechaNacimiento);
+            Controls.Add(dtpFechaingreso);
+            Controls.Add(dtpFechanacimiento);
             Controls.Add(lblFechaNacimiento);
             Controls.Add(cbCargo);
             Controls.Add(lblCargo);
@@ -267,7 +272,6 @@
             Controls.Add(cbGenero);
             Controls.Add(cbDireccion);
             Controls.Add(cbDepartamento);
-            Controls.Add(txtFechaIngreso);
             Controls.Add(txtTelefono);
             Controls.Add(txtCorreo);
             Controls.Add(txtCedula);
@@ -304,8 +308,6 @@
         private TextBox txtApellido;
         private TextBox txtCedula;
         private TextBox txtCorreo;
-        private TextBox txtTelefono;
-        private TextBox txtFechaIngreso;
         private ComboBox cbDepartamento;
         private ComboBox cbDireccion;
         private ComboBox cbGenero;
@@ -314,6 +316,8 @@
         private ComboBox cbCargo;
         private Label lblCargo;
         private Label lblFechaNacimiento;
-        private TextBox txtFechaNacimiento;
+        private TextBox txtTelefono;
+        private DateTimePicker dtpFechanacimiento;
+        private DateTimePicker dtpFechaingreso;
     }
 }

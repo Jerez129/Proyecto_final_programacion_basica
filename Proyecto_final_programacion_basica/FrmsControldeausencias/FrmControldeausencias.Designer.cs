@@ -28,18 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dgvEmpleadosbasico = new DataGridView();
+            btnVisualRegistrarausencia = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleadosbasico).BeginInit();
             SuspendLayout();
+            // 
+            // dgvEmpleadosbasico
+            // 
+            dgvEmpleadosbasico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEmpleadosbasico.Location = new Point(58, 41);
+            dgvEmpleadosbasico.Name = "dgvEmpleadosbasico";
+            dgvEmpleadosbasico.RowHeadersWidth = 51;
+            dgvEmpleadosbasico.Size = new Size(955, 344);
+            dgvEmpleadosbasico.TabIndex = 15;
+            // 
+            // btnVisualRegistrarausencia
+            // 
+            btnVisualRegistrarausencia.Location = new Point(489, 514);
+            btnVisualRegistrarausencia.Name = "btnVisualRegistrarausencia";
+            btnVisualRegistrarausencia.Size = new Size(94, 29);
+            btnVisualRegistrarausencia.TabIndex = 16;
+            btnVisualRegistrarausencia.Text = "Registrar";
+            btnVisualRegistrarausencia.UseVisualStyleBackColor = true;
+            btnVisualRegistrarausencia.Click += btnVisualRegistrarausencia_Click;
             // 
             // FrmControldeausencias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(853, 450);
+            ClientSize = new Size(1079, 664);
+            Controls.Add(btnVisualRegistrarausencia);
+            Controls.Add(dgvEmpleadosbasico);
             Name = "FrmControldeausencias";
             Text = "FrmControldeausencias";
+            Load += FrmControldeausencias_Load_1;
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleadosbasico).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvEmpleadosbasico;
+        private Button btnVisualRegistrarausencia;
     }
 }

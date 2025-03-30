@@ -30,36 +30,28 @@
         {
             btnVisualregistrarempleado = new Button();
             btnVisualeditarempleado = new Button();
-            btnEliminarempleado = new Button();
             btnVolveralmenuprincipal = new Button();
             SuspendLayout();
             // 
             // btnVisualregistrarempleado
             // 
-            btnVisualregistrarempleado.Location = new Point(112, 325);
+            btnVisualregistrarempleado.Location = new Point(169, 325);
             btnVisualregistrarempleado.Name = "btnVisualregistrarempleado";
             btnVisualregistrarempleado.Size = new Size(94, 29);
             btnVisualregistrarempleado.TabIndex = 0;
             btnVisualregistrarempleado.Text = "Registrar";
             btnVisualregistrarempleado.UseVisualStyleBackColor = true;
+            btnVisualregistrarempleado.Click += btnVisualregistrarempleado_Click;
             // 
             // btnVisualeditarempleado
             // 
-            btnVisualeditarempleado.Location = new Point(340, 325);
+            btnVisualeditarempleado.Location = new Point(496, 325);
             btnVisualeditarempleado.Name = "btnVisualeditarempleado";
             btnVisualeditarempleado.Size = new Size(94, 29);
             btnVisualeditarempleado.TabIndex = 1;
             btnVisualeditarempleado.Text = "Editar";
             btnVisualeditarempleado.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarempleado
-            // 
-            btnEliminarempleado.Location = new Point(574, 325);
-            btnEliminarempleado.Name = "btnEliminarempleado";
-            btnEliminarempleado.Size = new Size(94, 29);
-            btnEliminarempleado.TabIndex = 2;
-            btnEliminarempleado.Text = "Eliminar";
-            btnEliminarempleado.UseVisualStyleBackColor = true;
+            btnVisualeditarempleado.Click += btnVisualeditarempleado_Click;
             // 
             // btnVolveralmenuprincipal
             // 
@@ -77,7 +69,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnVolveralmenuprincipal);
-            Controls.Add(btnEliminarempleado);
             Controls.Add(btnVisualeditarempleado);
             Controls.Add(btnVisualregistrarempleado);
             Name = "FrmVisualcontroldeempleados";
@@ -89,7 +80,6 @@
 
         private Button btnVisualregistrarempleado;
         private Button btnVisualeditarempleado;
-        private Button btnEliminarempleado;
         private Button btnVolveralmenuprincipal;
     }
 }
