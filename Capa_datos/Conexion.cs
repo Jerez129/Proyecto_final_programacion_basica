@@ -22,8 +22,4 @@ namespace Conexion
             return Conexion;
         }
     }
-
-
-
-
 }
