@@ -55,13 +55,15 @@
             btnEliminar = new Button();
             txtId_Empleadoeditar = new TextBox();
             btnCerrarvisualeditarempleado = new Button();
+            txtSalariobaseeditar = new TextBox();
+            lblSalariobaseeditar = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleadosEditar).BeginInit();
             SuspendLayout();
             // 
             // dtpFechaingresoeditar
             // 
             dtpFechaingresoeditar.Format = DateTimePickerFormat.Short;
-            dtpFechaingresoeditar.Location = new Point(175, 576);
+            dtpFechaingresoeditar.Location = new Point(175, 620);
             dtpFechaingresoeditar.Name = "dtpFechaingresoeditar";
             dtpFechaingresoeditar.Size = new Size(112, 27);
             dtpFechaingresoeditar.TabIndex = 48;
@@ -69,7 +71,7 @@
             // dtpFechanacimientoeditar
             // 
             dtpFechanacimientoeditar.Format = DateTimePickerFormat.Short;
-            dtpFechanacimientoeditar.Location = new Point(175, 535);
+            dtpFechanacimientoeditar.Location = new Point(175, 579);
             dtpFechanacimientoeditar.Name = "dtpFechanacimientoeditar";
             dtpFechanacimientoeditar.Size = new Size(112, 27);
             dtpFechanacimientoeditar.TabIndex = 47;
@@ -77,7 +79,7 @@
             // lblFechaNacimientoeditar
             // 
             lblFechaNacimientoeditar.AutoSize = true;
-            lblFechaNacimientoeditar.Location = new Point(0, 535);
+            lblFechaNacimientoeditar.Location = new Point(0, 579);
             lblFechaNacimientoeditar.Name = "lblFechaNacimientoeditar";
             lblFechaNacimientoeditar.Size = new Size(128, 20);
             lblFechaNacimientoeditar.TabIndex = 46;
@@ -87,7 +89,7 @@
             // 
             cbCargoeditar.FormattingEnabled = true;
             cbCargoeditar.Items.AddRange(new object[] { "Gerente de Distribución", "", "", "Gerente de Logística", "", "", "Supervisor de Distribución", "", "", "Supervisor de Almacén", "", "", "Auxiliar de Distribución", "", "", "Chofer de Distribución", "", "", "Técnico de Productividad", "", "", "Técnico en Logística", "", "", "Coordinador de Seguridad Industrial", "", "", "Técnico en Control de Calidad", "", "", "Técnico de gente y gestión ", "", "", "Gerente de Ventas", "Asesor de ventas" });
-            cbCargoeditar.Location = new Point(136, 330);
+            cbCargoeditar.Location = new Point(136, 367);
             cbCargoeditar.Name = "cbCargoeditar";
             cbCargoeditar.Size = new Size(190, 28);
             cbCargoeditar.TabIndex = 45;
@@ -95,7 +97,7 @@
             // lblCargoeditar
             // 
             lblCargoeditar.AutoSize = true;
-            lblCargoeditar.Location = new Point(76, 333);
+            lblCargoeditar.Location = new Point(76, 370);
             lblCargoeditar.Name = "lblCargoeditar";
             lblCargoeditar.Size = new Size(49, 20);
             lblCargoeditar.TabIndex = 44;
@@ -104,7 +106,7 @@
             // cbGeneroeditar
             // 
             cbGeneroeditar.FormattingEnabled = true;
-            cbGeneroeditar.Location = new Point(136, 492);
+            cbGeneroeditar.Location = new Point(136, 520);
             cbGeneroeditar.Name = "cbGeneroeditar";
             cbGeneroeditar.Size = new Size(190, 28);
             cbGeneroeditar.TabIndex = 43;
@@ -112,7 +114,7 @@
             // cbDireccioneditar
             // 
             cbDireccioneditar.FormattingEnabled = true;
-            cbDireccioneditar.Location = new Point(136, 444);
+            cbDireccioneditar.Location = new Point(136, 472);
             cbDireccioneditar.Name = "cbDireccioneditar";
             cbDireccioneditar.Size = new Size(362, 28);
             cbDireccioneditar.TabIndex = 42;
@@ -120,14 +122,14 @@
             // cbDepartamentoeditar
             // 
             cbDepartamentoeditar.FormattingEnabled = true;
-            cbDepartamentoeditar.Location = new Point(136, 395);
+            cbDepartamentoeditar.Location = new Point(136, 423);
             cbDepartamentoeditar.Name = "cbDepartamentoeditar";
             cbDepartamentoeditar.Size = new Size(190, 28);
             cbDepartamentoeditar.TabIndex = 41;
             // 
             // txtTelefonoeditar
             // 
-            txtTelefonoeditar.Location = new Point(136, 279);
+            txtTelefonoeditar.Location = new Point(136, 275);
             txtTelefonoeditar.Name = "txtTelefonoeditar";
             txtTelefonoeditar.Size = new Size(233, 27);
             txtTelefonoeditar.TabIndex = 40;
@@ -163,7 +165,7 @@
             // lbIdgeneroeditar
             // 
             lbIdgeneroeditar.AutoSize = true;
-            lbIdgeneroeditar.Location = new Point(68, 500);
+            lbIdgeneroeditar.Location = new Point(68, 528);
             lbIdgeneroeditar.Name = "lbIdgeneroeditar";
             lbIdgeneroeditar.Size = new Size(57, 20);
             lbIdgeneroeditar.TabIndex = 35;
@@ -172,7 +174,7 @@
             // lblIddireccioneditar
             // 
             lblIddireccioneditar.AutoSize = true;
-            lblIddireccioneditar.Location = new Point(53, 447);
+            lblIddireccioneditar.Location = new Point(53, 475);
             lblIddireccioneditar.Name = "lblIddireccioneditar";
             lblIddireccioneditar.Size = new Size(72, 20);
             lblIddireccioneditar.TabIndex = 34;
@@ -181,7 +183,7 @@
             // lblIddepartamentoeditar
             // 
             lblIddepartamentoeditar.AutoSize = true;
-            lblIddepartamentoeditar.Location = new Point(19, 398);
+            lblIddepartamentoeditar.Location = new Point(19, 426);
             lblIddepartamentoeditar.Name = "lblIddepartamentoeditar";
             lblIddepartamentoeditar.Size = new Size(106, 20);
             lblIddepartamentoeditar.TabIndex = 33;
@@ -190,7 +192,7 @@
             // lblFechaIngresoeeditar
             // 
             lblFechaIngresoeeditar.AutoSize = true;
-            lblFechaIngresoeeditar.Location = new Point(25, 576);
+            lblFechaIngresoeeditar.Location = new Point(25, 620);
             lblFechaIngresoeeditar.Name = "lblFechaIngresoeeditar";
             lblFechaIngresoeeditar.Size = new Size(100, 20);
             lblFechaIngresoeeditar.TabIndex = 32;
@@ -199,7 +201,7 @@
             // lblTelefonoeditar
             // 
             lblTelefonoeditar.AutoSize = true;
-            lblTelefonoeditar.Location = new Point(61, 282);
+            lblTelefonoeditar.Location = new Point(61, 278);
             lblTelefonoeditar.Name = "lblTelefonoeditar";
             lblTelefonoeditar.Size = new Size(67, 20);
             lblTelefonoeditar.TabIndex = 31;
@@ -253,7 +255,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(76, 651);
+            btnEditar.Location = new Point(76, 685);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(94, 29);
             btnEditar.TabIndex = 50;
@@ -263,7 +265,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(193, 651);
+            btnEliminar.Location = new Point(193, 685);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 51;
@@ -289,11 +291,29 @@
             btnCerrarvisualeditarempleado.UseVisualStyleBackColor = true;
             btnCerrarvisualeditarempleado.Click += btnCerrarvisualeditarempleado_Click;
             // 
+            // txtSalariobaseeditar
+            // 
+            txtSalariobaseeditar.Location = new Point(136, 320);
+            txtSalariobaseeditar.Name = "txtSalariobaseeditar";
+            txtSalariobaseeditar.Size = new Size(233, 27);
+            txtSalariobaseeditar.TabIndex = 55;
+            // 
+            // lblSalariobaseeditar
+            // 
+            lblSalariobaseeditar.AutoSize = true;
+            lblSalariobaseeditar.Location = new Point(34, 324);
+            lblSalariobaseeditar.Name = "lblSalariobaseeditar";
+            lblSalariobaseeditar.Size = new Size(90, 20);
+            lblSalariobaseeditar.TabIndex = 54;
+            lblSalariobaseeditar.Text = "Salario base";
+            // 
             // FrmVisualeditarempleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1567, 704);
+            ClientSize = new Size(1567, 740);
+            Controls.Add(txtSalariobaseeditar);
+            Controls.Add(lblSalariobaseeditar);
             Controls.Add(btnCerrarvisualeditarempleado);
             Controls.Add(txtId_Empleadoeditar);
             Controls.Add(btnEliminar);
@@ -358,5 +378,7 @@
         private Button btnEliminar;
         private TextBox txtId_Empleadoeditar;
         private Button btnCerrarvisualeditarempleado;
+        private TextBox txtSalariobaseeditar;
+        private Label lblSalariobaseeditar;
     }
 }

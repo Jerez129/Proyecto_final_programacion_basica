@@ -29,6 +29,7 @@ namespace Capa_Negocio
         public string Cargo { get; set; }
         public string Telefono { get; set; }
         public DateTime FechaIngreso { get; set; }
+        public decimal SalarioBase { get; set; }
         public int IdDepartamento { get; set; }
         public int IdDireccion { get; set; }
         public int IdGenero { get; set; }
@@ -75,6 +76,7 @@ namespace Capa_Negocio
             comando.Parameters.AddWithValue("@Cargo", Empleado.Cargo);
             comando.Parameters.AddWithValue("@Telefono", Empleado.Telefono);
             comando.Parameters.AddWithValue("@FechaIngreso", Empleado   .FechaIngreso);
+            comando.Parameters.AddWithValue("@SalarioBase", Empleado.SalarioBase);
             comando.Parameters.AddWithValue("@id_Departamento", Empleado.IdDepartamento);
             comando.Parameters.AddWithValue("@id_Direccion", Empleado.IdDireccion);
             comando.Parameters.AddWithValue("@id_Genero", Empleado.IdGenero);
@@ -96,6 +98,7 @@ namespace Capa_Negocio
             comando.Parameters.AddWithValue("@Cargo", Empleado.Cargo);
             comando.Parameters.AddWithValue("@Telefono", Empleado.Telefono);
             comando.Parameters.AddWithValue("@FechaIngreso", Empleado.FechaIngreso);
+            comando.Parameters.AddWithValue("@SalarioBase", Empleado.SalarioBase);
             comando.Parameters.AddWithValue("@id_Departamento", Empleado.IdDepartamento);
             comando.Parameters.AddWithValue("@id_Direccion", Empleado.IdDireccion);
             comando.Parameters.AddWithValue("@id_Genero", Empleado.IdGenero);

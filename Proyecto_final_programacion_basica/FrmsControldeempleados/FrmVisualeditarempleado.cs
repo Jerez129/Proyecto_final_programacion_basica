@@ -38,6 +38,7 @@ namespace Capa_Presentacion.FrmsControldeempleados
             txtCedulaeditar.Clear();
             txtCorreoeditar.Clear();
             txtTelefonoeditar.Clear();
+            txtSalariobaseeditar.Clear();
             dtpFechanacimientoeditar.Value = DateTime.Now;
             dtpFechaingresoeditar.Value = DateTime.Now;
             cbCargoeditar.SelectedIndex = -1;
@@ -81,6 +82,7 @@ namespace Capa_Presentacion.FrmsControldeempleados
             empleado.Telefono = txtTelefonoeditar.Text;
             empleado.FechaNacimiento = dtpFechanacimientoeditar.Value;
             empleado.FechaIngreso = dtpFechaingresoeditar.Value;
+            empleado.SalarioBase = txtSalariobaseeditar.Text == "0" ? 0 : Convert.ToDecimal(txtSalariobaseeditar.Text);
             empleado.Cargo = cbCargoeditar.Text;
             empleado.IdDireccion = Convert.ToInt32(cbDireccioneditar.SelectedValue);
             empleado.IdDepartamento = Convert.ToInt32(cbDepartamentoeditar.SelectedValue);
@@ -106,6 +108,7 @@ namespace Capa_Presentacion.FrmsControldeempleados
                 txtTelefonoeditar.Text = fila.Cells["Telefono"].Value.ToString();
                 dtpFechanacimientoeditar.Value = Convert.ToDateTime(fila.Cells["FechaNacimiento"].Value);
                 dtpFechaingresoeditar.Value = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
+                txtSalariobaseeditar.Text = fila.Cells["SalarioBase"].Value.ToString();
                 cbCargoeditar.Text = fila.Cells["Cargo"].Value.ToString();
                 cbDepartamentoeditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Departamento"].Value);
                 cbDireccioneditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Direccion"].Value);

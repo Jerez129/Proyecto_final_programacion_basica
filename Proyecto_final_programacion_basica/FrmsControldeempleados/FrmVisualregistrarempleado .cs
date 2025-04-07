@@ -26,6 +26,7 @@ namespace Capa_Presentacion_Proyecto_Final
             txtCedula.Clear();
             txtCorreo.Clear();
             txtTelefono.Clear();
+            txtSalariobase.Clear();
             dtpFechanacimiento.Value = DateTime.Now;
             dtpFechaingreso.Value = DateTime.Now;
             cbCargo.SelectedIndex = -1;
@@ -46,6 +47,7 @@ namespace Capa_Presentacion_Proyecto_Final
             empleado.Telefono = txtTelefono.Text;
             empleado.FechaNacimiento = dtpFechanacimiento.Value;
             empleado.FechaIngreso = dtpFechaingreso.Value;
+            empleado.SalarioBase = txtSalariobase.Text == "0"? 0 : Convert.ToDecimal(txtSalariobase.Text);
             empleado.IdDireccion = Convert.ToInt32(cbDireccion.SelectedValue);
             empleado.Cargo = cbCargo.Text;
             empleado.IdDepartamento = Convert.ToInt32(cbDepartamento.SelectedValue);

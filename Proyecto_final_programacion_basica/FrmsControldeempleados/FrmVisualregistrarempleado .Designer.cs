@@ -52,6 +52,8 @@
             txtTelefono = new TextBox();
             dtpFechanacimiento = new DateTimePicker();
             dtpFechaingreso = new DateTimePicker();
+            txtSalariobase = new TextBox();
+            lblSalariobase = new Label();
             SuspendLayout();
             // 
             // lblNombre
@@ -102,7 +104,7 @@
             // lblFechaIngreso
             // 
             lblFechaIngreso.AutoSize = true;
-            lblFechaIngreso.Location = new Point(34, 464);
+            lblFechaIngreso.Location = new Point(34, 518);
             lblFechaIngreso.Name = "lblFechaIngreso";
             lblFechaIngreso.Size = new Size(100, 20);
             lblFechaIngreso.TabIndex = 5;
@@ -228,7 +230,7 @@
             // lblFechaNacimiento
             // 
             lblFechaNacimiento.AutoSize = true;
-            lblFechaNacimiento.Location = new Point(11, 418);
+            lblFechaNacimiento.Location = new Point(11, 472);
             lblFechaNacimiento.Name = "lblFechaNacimiento";
             lblFechaNacimiento.Size = new Size(128, 20);
             lblFechaNacimiento.TabIndex = 24;
@@ -244,7 +246,7 @@
             // dtpFechanacimiento
             // 
             dtpFechanacimiento.Format = DateTimePickerFormat.Short;
-            dtpFechanacimiento.Location = new Point(197, 416);
+            dtpFechanacimiento.Location = new Point(197, 470);
             dtpFechanacimiento.Name = "dtpFechanacimiento";
             dtpFechanacimiento.Size = new Size(112, 27);
             dtpFechanacimiento.TabIndex = 25;
@@ -252,16 +254,34 @@
             // dtpFechaingreso
             // 
             dtpFechaingreso.Format = DateTimePickerFormat.Short;
-            dtpFechaingreso.Location = new Point(197, 464);
+            dtpFechaingreso.Location = new Point(197, 518);
             dtpFechaingreso.Name = "dtpFechaingreso";
             dtpFechaingreso.Size = new Size(112, 27);
             dtpFechaingreso.TabIndex = 26;
+            // 
+            // txtSalariobase
+            // 
+            txtSalariobase.Location = new Point(140, 414);
+            txtSalariobase.Name = "txtSalariobase";
+            txtSalariobase.Size = new Size(233, 27);
+            txtSalariobase.TabIndex = 28;
+            // 
+            // lblSalariobase
+            // 
+            lblSalariobase.AutoSize = true;
+            lblSalariobase.Location = new Point(41, 417);
+            lblSalariobase.Name = "lblSalariobase";
+            lblSalariobase.Size = new Size(90, 20);
+            lblSalariobase.TabIndex = 27;
+            lblSalariobase.Text = "Salario Base";
             // 
             // FrmVisualregistrarempleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(933, 601);
+            Controls.Add(txtSalariobase);
+            Controls.Add(lblSalariobase);
             Controls.Add(dtpFechaingreso);
             Controls.Add(dtpFechanacimiento);
             Controls.Add(lblFechaNacimiento);
@@ -319,5 +339,7 @@
         private TextBox txtTelefono;
         private DateTimePicker dtpFechanacimiento;
         private DateTimePicker dtpFechaingreso;
+        private TextBox txtSalariobase;
+        private Label lblSalariobase;
     }
 }
