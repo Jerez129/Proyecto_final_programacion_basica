@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocio
 {
-    public class DepartamentoModel
+    public class DepartamentoModel : ModeloBase
     {
         public int IdDepartamento { get; set; }
         public string NombreDepartamento { get; set; }

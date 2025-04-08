@@ -1,4 +1,5 @@
 ﻿using Capa_Presentacion;
+using Capa_Presentacion.FrmsControldeausencias;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,7 +84,7 @@ namespace Capa_Presentacion_Proyecto_Final
         }
         private void btnControldeausencias_Click(object sender, EventArgs e)
         {
-            FrmControldeausencias frm = new FrmControldeausencias();
+            FrmEntradaausencias frm = new FrmEntradaausencias();
             this.Hide();
             frm.Show();
         }
@@ -206,6 +207,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
         }
 
-     
+        private void pnlMenuPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }

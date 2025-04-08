@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Capa_Negocio
 {
     
-    public class DireccionModel
+    public class DireccionModel : ModeloBase
     {
 
         private CD_Conexion conexion = new CD_Conexion();

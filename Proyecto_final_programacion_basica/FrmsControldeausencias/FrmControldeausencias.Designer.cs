@@ -31,6 +31,7 @@
             dgvEmpleadosbasico = new DataGridView();
             btnVisualRegistrarausencia = new Button();
             btnEditar = new Button();
+            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleadosbasico).BeginInit();
             SuspendLayout();
             // 
@@ -45,13 +46,23 @@
             // 
             // btnVisualRegistrarausencia
             // 
-            btnVisualRegistrarausencia.Location = new Point(307, 553);
+            btnVisualRegistrarausencia.Location = new Point(494, 546);
             btnVisualRegistrarausencia.Name = "btnVisualRegistrarausencia";
             btnVisualRegistrarausencia.Size = new Size(94, 29);
             btnVisualRegistrarausencia.TabIndex = 16;
             btnVisualRegistrarausencia.Text = "Registrar";
             btnVisualRegistrarausencia.UseVisualStyleBackColor = true;
             btnVisualRegistrarausencia.Click += btnVisualRegistrarausencia_Click;
+            // 
+            // btnVolver
+            // 
+            btnVolver.Location = new Point(916, 546);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(94, 29);
+            btnVolver.TabIndex = 17;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // btnEditar
             // 
@@ -67,6 +78,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1079, 664);
+            Controls.Add(btnVolver);
             Controls.Add(btnEditar);
             Controls.Add(btnVisualRegistrarausencia);
             Controls.Add(dgvEmpleadosbasico);
@@ -81,6 +93,7 @@
 
         private DataGridView dgvEmpleadosbasico;
         private Button btnVisualRegistrarausencia;
+        private Button btnVolver;
         private Button btnEditar;
     }
 }

@@ -82,15 +82,35 @@ namespace Capa_Presentacion.FrmsControldeempleados
             empleado.Telefono = txtTelefonoeditar.Text;
             empleado.FechaNacimiento = dtpFechanacimientoeditar.Value;
             empleado.FechaIngreso = dtpFechaingresoeditar.Value;
-            empleado.SalarioBase = txtSalariobaseeditar.Text == "0" ? 0 : Convert.ToDecimal(txtSalariobaseeditar.Text);
+            // Validación para el salario base
+            if (string.IsNullOrWhiteSpace(txtSalariobaseeditar.Text) || !decimal.TryParse(txtSalariobaseeditar.Text, out decimal salario))
+            {
+                MessageBox.Show("El salario base debe ser un número válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir si el salario base no es válido
+            }
+            empleado.SalarioBase = salario; // Asignar el salario base al objeto empleado
             empleado.Cargo = cbCargoeditar.Text;
             empleado.IdDireccion = Convert.ToInt32(cbDireccioneditar.SelectedValue);
             empleado.IdDepartamento = Convert.ToInt32(cbDepartamentoeditar.SelectedValue);
             empleado.IdGenero = Convert.ToInt32(cbGeneroeditar.SelectedValue);
-            empleado.Editar(empleado);
-            MessageBox.Show("Empleado editado exitosamente.");
+
+            string mensajeError;
+            if (empleado.ValidacionEditar(out mensajeError))  // Llamamos a Validacion con out
+
+            {
+                // Si la validación es correcta, registrar el empleado
+                empleado.Editar(empleado);
+                MessageBox.Show("Empleado editado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiarcampos();
+            }
+            else
+            {
+                // Si hay un error de validación, mostrar el mensaje de error
+                MessageBox.Show(mensajeError, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+ 
             Mostrarempleadodetallado();
-            Limpiarcampos();
+
         }
 
 
@@ -118,11 +138,25 @@ namespace Capa_Presentacion.FrmsControldeempleados
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            CN_Control_Empleados empleado = new CN_Control_Empleados();
-            empleado.IdEmpleado = Convert.ToInt32(txtId_Empleadoeditar.Text);
-            empleado.Eliminar(empleado);
-            Mostrarempleadodetallado();
-            Limpiarcampos();
+            // Verificar si se ha seleccionado alguna fila en el DataGridView
+            if (dgvEmpleadosEditar.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del empleado de la fila seleccionada
+                int idEmpleado = Convert.ToInt32(dgvEmpleadosEditar.SelectedRows[0].Cells["id_Empleado"].Value);
+
+                // Crear el objeto empleado y eliminarlo
+                CN_Control_Empleados empleado = new CN_Control_Empleados();
+                empleado.IdEmpleado = idEmpleado;
+                empleado.Eliminar(empleado);
+
+                // Actualizar la vista
+                Mostrarempleadodetallado();
+                Limpiarcampos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un empleado para eliminar.");
+            }
 
         }
 

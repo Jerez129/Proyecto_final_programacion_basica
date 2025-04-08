@@ -141,6 +141,7 @@
             // cbAprobacionausencia
             // 
             cbAprobacionausencia.FormattingEnabled = true;
+            cbAprobacionausencia.Items.AddRange(new object[] { "1", "0" });
             cbAprobacionausencia.Location = new Point(182, 474);
             cbAprobacionausencia.Name = "cbAprobacionausencia";
             cbAprobacionausencia.Size = new Size(187, 28);
@@ -178,6 +179,7 @@
             txtIdEmpleado.Name = "txtIdEmpleado";
             txtIdEmpleado.Size = new Size(187, 27);
             txtIdEmpleado.TabIndex = 18;
+            txtIdEmpleado.Visible = false;
             // 
             // FrmVisualRegistrarusencias
             // 

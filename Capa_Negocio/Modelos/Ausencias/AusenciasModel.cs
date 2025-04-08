@@ -6,11 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Capa_Negocio.Interfaces;
+using Capa_Negocio;
 
 namespace Capa_Negocio
 {
-    public class AusenciasModel
+    public class AusenciasModel : ModeloBase
     {
         private CD_Conexion conexion = new CD_Conexion();
         SqlCommand comando = new SqlCommand();
@@ -89,6 +89,17 @@ namespace Capa_Negocio
             comando.Parameters.Clear();
             conexion.CerrarConexion();
 
+        }
+
+        public DataTable MostrarAusenciasParaEditar()
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "MostrarAusenciasParaEditar";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
         }
 
         public DataTable MostrarAusenciasPorFecha(DateTime fecha)

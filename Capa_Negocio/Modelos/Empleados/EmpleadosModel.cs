@@ -12,7 +12,7 @@ using Capa_Datos.ClasesDAL;
 namespace Capa_Negocio
 {
 
-    public class EmpleadosModel
+    public class EmpleadosModel : ModeloBase
     {
         private CD_Conexion conexion = new CD_Conexion();
         //esto es para leer data de las tablas

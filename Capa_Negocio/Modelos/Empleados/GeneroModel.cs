@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocio.Modelos.Empleados
 {
-    public class GeneroModel
+    public class GeneroModel : ModeloBase
     {
         private CD_Conexion conexion = new CD_Conexion();
         SqlCommand comando = new SqlCommand();

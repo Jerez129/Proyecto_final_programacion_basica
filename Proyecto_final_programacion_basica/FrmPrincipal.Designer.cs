@@ -79,6 +79,7 @@
             pnlMenuPrincipal.Size = new Size(250, 688);
             pnlMenuPrincipal.TabIndex = 0;
             pnlMenuPrincipal.Visible = false;
+            pnlMenuPrincipal.Paint += pnlMenuPrincipal_Paint;
             // 
             // flowLayoutPanel1
             // 

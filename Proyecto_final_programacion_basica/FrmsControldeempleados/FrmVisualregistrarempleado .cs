@@ -39,7 +39,6 @@ namespace Capa_Presentacion_Proyecto_Final
         {
             CN_Control_Empleados empleado = new CN_Control_Empleados();
 
-
             empleado.Nombre = txtNombre.Text;
             empleado.Apellido = txtApellido.Text;
             empleado.Cedula = txtCedula.Text;
@@ -47,14 +46,34 @@ namespace Capa_Presentacion_Proyecto_Final
             empleado.Telefono = txtTelefono.Text;
             empleado.FechaNacimiento = dtpFechanacimiento.Value;
             empleado.FechaIngreso = dtpFechaingreso.Value;
-            empleado.SalarioBase = txtSalariobase.Text == "0"? 0 : Convert.ToDecimal(txtSalariobase.Text);
+            // Validación para el salario base
+            // Validación para el salario base
+            if (string.IsNullOrWhiteSpace(txtSalariobase.Text) || !decimal.TryParse(txtSalariobase.Text, out decimal salario))
+            {
+                MessageBox.Show("El salario base debe ser un número válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir si el salario base no es válido
+            }
+            empleado.SalarioBase = salario; // Asignar el salario base al objeto empleado
             empleado.IdDireccion = Convert.ToInt32(cbDireccion.SelectedValue);
             empleado.Cargo = cbCargo.Text;
             empleado.IdDepartamento = Convert.ToInt32(cbDepartamento.SelectedValue);
             empleado.IdGenero = Convert.ToInt32(cbGenero.SelectedValue);
-            empleado.Insertar(empleado);
-            MessageBox.Show("Empleado registrado exitosamente.");
-            Limpiarcampos();
+
+            string mensajeError;
+            if (empleado.Validacion(out mensajeError))  // Llamamos a Validacion con out
+            {
+                // Si la validación es correcta, registrar el empleado
+                empleado.Insertar(empleado);
+                MessageBox.Show("Empleado registrado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiarcampos();
+            }
+            else
+            {
+                // Si hay un error de validación, mostrar el mensaje de error
+                MessageBox.Show(mensajeError, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+          
         }
 
         private void FrmVisualregistrarempleado_Load(object sender, EventArgs e)
@@ -74,6 +93,7 @@ namespace Capa_Presentacion_Proyecto_Final
             cbDepartamento.DisplayMember = "NombreDepartamento"; // Nombre de la columna que se mostrará
             cbDepartamento.ValueMember = "id_Departamento"; // Nombre de la columna que se usará como valor
             cbDepartamento.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
+
 
         }
 

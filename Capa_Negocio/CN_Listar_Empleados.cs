@@ -8,5 +8,7 @@ namespace Capa_Negocio
 {
     internal class CN_Listar_Empleados
     {
+
+
     }
 }

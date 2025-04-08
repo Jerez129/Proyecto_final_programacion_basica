@@ -2,6 +2,7 @@ using System.Data;
 using System.Windows.Forms;
 using Capa_Negocio;
 using Capa_Presentacion.FrmsControldeasencias;
+using Capa_Presentacion.FrmsControldeausencias;
 
 namespace Capa_Presentacion_Proyecto_Final
 {
@@ -44,8 +45,16 @@ namespace Capa_Presentacion_Proyecto_Final
 
             else
             {
-               MessageBox.Show("Seleccione un empleado antes de registrar una ausencia.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un empleado antes de registrar una ausencia.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            FrmEntradaausencias frmEntradaausencias = new FrmEntradaausencias();
+            frmEntradaausencias.Show();
+            this.Close();
+
         }
     }
 }
