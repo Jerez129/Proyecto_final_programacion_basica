@@ -4,7 +4,7 @@ using Capa_Datos.ClasesDAL;
 
 namespace Capa_Negocio
 {
-    public class CN_Control_Nomina : IControlNomina
+    public class CN_Control_Nomina 
     {
     
     }

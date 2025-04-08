@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             btnIniciarsesión = new Button();
-            lblUsuario = new Label();
-            lblClave = new Label();
             txtUsuario = new TextBox();
             txtClave = new TextBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnIniciarsesión
             // 
-            btnIniciarsesión.Location = new Point(327, 286);
+            btnIniciarsesión.Location = new Point(327, 331);
             btnIniciarsesión.Name = "btnIniciarsesión";
             btnIniciarsesión.Size = new Size(112, 29);
             btnIniciarsesión.TabIndex = 0;
@@ -45,50 +48,57 @@
             btnIniciarsesión.UseVisualStyleBackColor = true;
             btnIniciarsesión.Click += btnIniciarsesión_Click;
             // 
-            // lblUsuario
-            // 
-            lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(214, 142);
-            lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(62, 20);
-            lblUsuario.TabIndex = 1;
-            lblUsuario.Text = "Usuario:";
-            // 
-            // lblClave
-            // 
-            lblClave.AutoSize = true;
-            lblClave.Location = new Point(228, 196);
-            lblClave.Name = "lblClave";
-            lblClave.Size = new Size(48, 20);
-            lblClave.TabIndex = 2;
-            lblClave.Text = "Clave:";
-            // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(314, 142);
+            txtUsuario.Location = new Point(312, 241);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(144, 27);
             txtUsuario.TabIndex = 3;
             // 
             // txtClave
             // 
-            txtClave.Location = new Point(314, 193);
+            txtClave.Location = new Point(312, 292);
             txtClave.Name = "txtClave";
+            txtClave.PasswordChar = '*';
             txtClave.Size = new Size(144, 27);
             txtClave.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(312, 96);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(144, 139);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(462, 292);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(30, 27);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(txtClave);
             Controls.Add(txtUsuario);
-            Controls.Add(lblClave);
-            Controls.Add(lblUsuario);
             Controls.Add(btnIniciarsesión);
             Name = "FrmLogin";
             Text = "FrmLogin";
+            Load += FrmLogin_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -96,9 +106,9 @@
         #endregion
 
         private Button btnIniciarsesión;
-        private Label lblUsuario;
-        private Label lblClave;
         private TextBox txtUsuario;
         private TextBox txtClave;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

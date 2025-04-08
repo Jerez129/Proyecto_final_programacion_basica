@@ -20,7 +20,7 @@ namespace Capa_Presentacion.FrmConsulta
 
         private void btnVerConsultasListar_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 CN_Control_Nomina controlNomina = new CN_Control_Nomina();
                 DataTable datosNomina = controlNomina.MostrarNomina();
@@ -29,7 +29,7 @@ namespace Capa_Presentacion.FrmConsulta
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
 
         }
     }
