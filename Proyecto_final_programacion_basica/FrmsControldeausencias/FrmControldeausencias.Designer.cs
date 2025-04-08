@@ -30,13 +30,14 @@
         {
             dgvEmpleadosbasico = new DataGridView();
             btnVisualRegistrarausencia = new Button();
+            btnEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleadosbasico).BeginInit();
             SuspendLayout();
             // 
             // dgvEmpleadosbasico
             // 
             dgvEmpleadosbasico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmpleadosbasico.Location = new Point(58, 41);
+            dgvEmpleadosbasico.Location = new Point(55, 82);
             dgvEmpleadosbasico.Name = "dgvEmpleadosbasico";
             dgvEmpleadosbasico.RowHeadersWidth = 51;
             dgvEmpleadosbasico.Size = new Size(955, 344);
@@ -44,7 +45,7 @@
             // 
             // btnVisualRegistrarausencia
             // 
-            btnVisualRegistrarausencia.Location = new Point(489, 514);
+            btnVisualRegistrarausencia.Location = new Point(307, 553);
             btnVisualRegistrarausencia.Name = "btnVisualRegistrarausencia";
             btnVisualRegistrarausencia.Size = new Size(94, 29);
             btnVisualRegistrarausencia.TabIndex = 16;
@@ -52,11 +53,21 @@
             btnVisualRegistrarausencia.UseVisualStyleBackColor = true;
             btnVisualRegistrarausencia.Click += btnVisualRegistrarausencia_Click;
             // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(594, 553);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(94, 29);
+            btnEditar.TabIndex = 17;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            // 
             // FrmControldeausencias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1079, 664);
+            Controls.Add(btnEditar);
             Controls.Add(btnVisualRegistrarausencia);
             Controls.Add(dgvEmpleadosbasico);
             Name = "FrmControldeausencias";
@@ -70,5 +81,6 @@
 
         private DataGridView dgvEmpleadosbasico;
         private Button btnVisualRegistrarausencia;
+        private Button btnEditar;
     }
 }
