@@ -137,14 +137,5 @@ namespace Capa_Negocio
              return tabla;
 
         }
-
-
-
-
-
     }
-
-
-
-
 }

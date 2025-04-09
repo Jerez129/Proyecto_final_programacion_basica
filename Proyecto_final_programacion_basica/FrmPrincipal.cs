@@ -93,7 +93,6 @@ namespace Capa_Presentacion_Proyecto_Final
         {
             FrmEntradaausencias frm = new FrmEntradaausencias();
             this.BackColor = ColorTranslator.FromHtml("#13747D");
-            FrmControldeausencias frm = new FrmControldeausencias();
             this.Hide();
             frm.Show();
         }

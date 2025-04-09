@@ -44,12 +44,16 @@
             // 
             // btnIniciarsesión
             // 
+            btnIniciarsesión.BackColor = Color.FromArgb(19, 116, 125);
+            btnIniciarsesión.FlatStyle = FlatStyle.Flat;
+            btnIniciarsesión.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnIniciarsesión.ForeColor = Color.FromArgb(252, 247, 197);
             btnIniciarsesión.Location = new Point(326, 342);
             btnIniciarsesión.Name = "btnIniciarsesión";
             btnIniciarsesión.Size = new Size(112, 29);
             btnIniciarsesión.TabIndex = 0;
             btnIniciarsesión.Text = "Iniciar Sesión";
-            btnIniciarsesión.UseVisualStyleBackColor = true;
+            btnIniciarsesión.UseVisualStyleBackColor = false;
             btnIniciarsesión.Click += btnIniciarsesión_Click;
             // 
             // txtUsuario
@@ -93,7 +97,7 @@
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(275, 292);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(31, 27);
+            pictureBox3.Size = new Size(26, 27);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
@@ -101,9 +105,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(275, 116);
+            pictureBox4.Location = new Point(275, 120);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(217, 104);
+            pictureBox4.Size = new Size(217, 100);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 8;
             pictureBox4.TabStop = false;
@@ -121,7 +125,9 @@
             Controls.Add(txtClave);
             Controls.Add(txtUsuario);
             Controls.Add(btnIniciarsesión);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmLogin";
             Load += FrmLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

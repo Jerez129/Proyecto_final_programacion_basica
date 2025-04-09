@@ -105,7 +105,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(252, 247, 197);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(781, 450);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(btnVolveralmenuprincipal);
@@ -113,6 +113,7 @@
             Controls.Add(btnVisualregistrarempleado);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmVisualcontroldeempleados";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmVisualcontroldeempleados";
             Load += FrmVisualcontroldeempleados_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

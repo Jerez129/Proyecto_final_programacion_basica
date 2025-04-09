@@ -30,7 +30,6 @@
         {
             dgvEditarausencias = new DataGridView();
             btnRegistrarausenciaeditar = new Button();
-            btnRegistrarausencia = new Button();
             dtpFechadefin = new DateTimePicker();
             dtpFechadeinicio = new DateTimePicker();
             cbAprobacionausencia = new ComboBox();
@@ -40,7 +39,6 @@
             lblFechaDeFinAusenciaEditar = new Label();
             lblFechaDeInicioAusenciaEditar = new Label();
             cbAprobacionEditar = new ComboBox();
-            lblAprobacioneditar = new Label();
             txtIdAusenciaEditar = new TextBox();
             txtIdEmpleadoEditar = new TextBox();
             btnEliminarasuenciaeditar = new Button();
@@ -50,7 +48,9 @@
             // 
             // dgvEditarausencias
             // 
+            dgvEditarausencias.BackgroundColor = Color.FromArgb(19, 116, 125);
             dgvEditarausencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEditarausencias.GridColor = Color.FromArgb(19, 116, 125);
             dgvEditarausencias.Location = new Point(408, 116);
             dgvEditarausencias.Name = "dgvEditarausencias";
             dgvEditarausencias.RowHeadersWidth = 51;
@@ -59,27 +59,22 @@
             dgvEditarausencias.CellClick += dgvEditarausencias_CellClick;
             // 
             // btnRegistrarausenciaeditar
-
-            btnRegistrarausenciaeditar.Location = new Point(87, 504);
+            // 
+            btnRegistrarausenciaeditar.BackColor = Color.FromArgb(19, 116, 125);
+            btnRegistrarausenciaeditar.FlatStyle = FlatStyle.Flat;
+            btnRegistrarausenciaeditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnRegistrarausenciaeditar.ForeColor = Color.FromArgb(252, 247, 197);
+            btnRegistrarausenciaeditar.Location = new Point(163, 504);
             btnRegistrarausenciaeditar.Name = "btnRegistrarausenciaeditar";
             btnRegistrarausenciaeditar.Size = new Size(94, 29);
             btnRegistrarausenciaeditar.TabIndex = 33;
             btnRegistrarausenciaeditar.Text = "Registrar";
-            btnRegistrarausenciaeditar.UseVisualStyleBackColor = true;
+            btnRegistrarausenciaeditar.UseVisualStyleBackColor = false;
             btnRegistrarausenciaeditar.Click += btnRegistrarausencia_Click;
-
-            // 
-            // btnRegistrarausencia
-            // 
-            btnRegistrarausencia.Location = new Point(75, 504);
-            btnRegistrarausencia.Name = "btnRegistrarausencia";
-            btnRegistrarausencia.Size = new Size(94, 29);
-            btnRegistrarausencia.TabIndex = 33;
-            btnRegistrarausencia.Text = "Registrar";
-            btnRegistrarausencia.UseVisualStyleBackColor = true;
             // 
             // dtpFechadefin
             // 
+            dtpFechadefin.CalendarMonthBackground = Color.FromArgb(252, 247, 197);
             dtpFechadefin.Format = DateTimePickerFormat.Short;
             dtpFechadefin.Location = new Point(183, 243);
             dtpFechadefin.Name = "dtpFechadefin";
@@ -88,6 +83,7 @@
             // 
             // dtpFechadeinicio
             // 
+            dtpFechadeinicio.CalendarMonthBackground = Color.FromArgb(252, 247, 197);
             dtpFechadeinicio.Format = DateTimePickerFormat.Short;
             dtpFechadeinicio.Location = new Point(183, 175);
             dtpFechadeinicio.Name = "dtpFechadeinicio";
@@ -104,6 +100,7 @@
             // 
             // cbTipodeausencia
             // 
+            cbTipodeausencia.BackColor = Color.FromArgb(252, 247, 197);
             cbTipodeausencia.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipodeausencia.FormattingEnabled = true;
             cbTipodeausencia.Location = new Point(183, 301);
@@ -114,56 +111,64 @@
             // lblAprobacionAusenciaEditar
             // 
             lblAprobacionAusenciaEditar.AutoSize = true;
+            lblAprobacionAusenciaEditar.BackColor = Color.FromArgb(19, 116, 125);
+            lblAprobacionAusenciaEditar.FlatStyle = FlatStyle.Flat;
+            lblAprobacionAusenciaEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblAprobacionAusenciaEditar.ForeColor = Color.FromArgb(252, 247, 197);
             lblAprobacionAusenciaEditar.Location = new Point(48, 374);
             lblAprobacionAusenciaEditar.Name = "lblAprobacionAusenciaEditar";
-            lblAprobacionAusenciaEditar.Size = new Size(87, 20);
+            lblAprobacionAusenciaEditar.Size = new Size(90, 20);
             lblAprobacionAusenciaEditar.TabIndex = 25;
             lblAprobacionAusenciaEditar.Text = "Aprobación";
             // 
             // lblTipoDeAusenciaEditar
             // 
             lblTipoDeAusenciaEditar.AutoSize = true;
+            lblTipoDeAusenciaEditar.BackColor = Color.FromArgb(19, 116, 125);
+            lblTipoDeAusenciaEditar.FlatStyle = FlatStyle.Flat;
+            lblTipoDeAusenciaEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblTipoDeAusenciaEditar.ForeColor = Color.FromArgb(252, 247, 197);
             lblTipoDeAusenciaEditar.Location = new Point(46, 309);
             lblTipoDeAusenciaEditar.Name = "lblTipoDeAusenciaEditar";
-            lblTipoDeAusenciaEditar.Size = new Size(123, 20);
+            lblTipoDeAusenciaEditar.Size = new Size(128, 20);
             lblTipoDeAusenciaEditar.TabIndex = 24;
             lblTipoDeAusenciaEditar.Text = "Tipo de Ausencia";
             // 
             // lblFechaDeFinAusenciaEditar
             // 
             lblFechaDeFinAusenciaEditar.AutoSize = true;
+            lblFechaDeFinAusenciaEditar.BackColor = Color.FromArgb(19, 116, 125);
+            lblFechaDeFinAusenciaEditar.FlatStyle = FlatStyle.Flat;
+            lblFechaDeFinAusenciaEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblFechaDeFinAusenciaEditar.ForeColor = Color.FromArgb(252, 247, 197);
             lblFechaDeFinAusenciaEditar.Location = new Point(48, 243);
             lblFechaDeFinAusenciaEditar.Name = "lblFechaDeFinAusenciaEditar";
-            lblFechaDeFinAusenciaEditar.Size = new Size(89, 20);
+            lblFechaDeFinAusenciaEditar.Size = new Size(93, 20);
             lblFechaDeFinAusenciaEditar.TabIndex = 23;
             lblFechaDeFinAusenciaEditar.Text = "Fecha de fin";
             // 
             // lblFechaDeInicioAusenciaEditar
             // 
             lblFechaDeInicioAusenciaEditar.AutoSize = true;
+            lblFechaDeInicioAusenciaEditar.BackColor = Color.FromArgb(19, 116, 125);
+            lblFechaDeInicioAusenciaEditar.FlatStyle = FlatStyle.Flat;
+            lblFechaDeInicioAusenciaEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblFechaDeInicioAusenciaEditar.ForeColor = Color.FromArgb(252, 247, 197);
             lblFechaDeInicioAusenciaEditar.Location = new Point(48, 175);
             lblFechaDeInicioAusenciaEditar.Name = "lblFechaDeInicioAusenciaEditar";
-            lblFechaDeInicioAusenciaEditar.Size = new Size(108, 20);
+            lblFechaDeInicioAusenciaEditar.Size = new Size(111, 20);
             lblFechaDeInicioAusenciaEditar.TabIndex = 22;
             lblFechaDeInicioAusenciaEditar.Text = "Fecha de inicio";
             // 
             // cbAprobacionEditar
             // 
+            cbAprobacionEditar.BackColor = Color.FromArgb(252, 247, 197);
             cbAprobacionEditar.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAprobacionEditar.FormattingEnabled = true;
             cbAprobacionEditar.Location = new Point(183, 367);
             cbAprobacionEditar.Name = "cbAprobacionEditar";
             cbAprobacionEditar.Size = new Size(187, 28);
             cbAprobacionEditar.TabIndex = 35;
-            // 
-            // lblAprobacioneditar
-            // 
-            lblAprobacioneditar.AutoSize = true;
-            lblAprobacioneditar.Location = new Point(69, 375);
-            lblAprobacioneditar.Name = "lblAprobacioneditar";
-            lblAprobacioneditar.Size = new Size(87, 20);
-            lblAprobacioneditar.TabIndex = 34;
-            lblAprobacioneditar.Text = "Aprobacion";
             // 
             // txtIdAusenciaEditar
             // 
@@ -183,37 +188,44 @@
             // 
             // btnEliminarasuenciaeditar
             // 
-            btnEliminarasuenciaeditar.Location = new Point(276, 504);
+            btnEliminarasuenciaeditar.BackColor = Color.FromArgb(19, 116, 125);
+            btnEliminarasuenciaeditar.FlatStyle = FlatStyle.Flat;
+            btnEliminarasuenciaeditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnEliminarasuenciaeditar.ForeColor = Color.FromArgb(252, 247, 197);
+            btnEliminarasuenciaeditar.Location = new Point(263, 504);
             btnEliminarasuenciaeditar.Name = "btnEliminarasuenciaeditar";
             btnEliminarasuenciaeditar.Size = new Size(94, 29);
             btnEliminarasuenciaeditar.TabIndex = 38;
             btnEliminarasuenciaeditar.Text = "Eliminar";
-            btnEliminarasuenciaeditar.UseVisualStyleBackColor = true;
+            btnEliminarasuenciaeditar.UseVisualStyleBackColor = false;
             btnEliminarasuenciaeditar.Click += btnEliminarasuenciaeditar_Click;
             // 
             // btnCerrar
             // 
+            btnCerrar.BackColor = Color.FromArgb(19, 116, 125);
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCerrar.ForeColor = Color.FromArgb(252, 247, 197);
             btnCerrar.Location = new Point(1110, 504);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(94, 29);
             btnCerrar.TabIndex = 39;
             btnCerrar.Text = "Cerrar";
-            btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.UseVisualStyleBackColor = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
             // FrmVisualEditarausencias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(252, 247, 197);
             ClientSize = new Size(1244, 629);
             Controls.Add(btnCerrar);
             Controls.Add(btnEliminarasuenciaeditar);
             Controls.Add(txtIdEmpleadoEditar);
             Controls.Add(txtIdAusenciaEditar);
             Controls.Add(cbAprobacionEditar);
-            Controls.Add(lblAprobacioneditar);
             Controls.Add(btnRegistrarausenciaeditar);
-            Controls.Add(btnRegistrarausencia);
             Controls.Add(dtpFechadefin);
             Controls.Add(dtpFechadeinicio);
             Controls.Add(cbAprobacionausencia);
@@ -223,7 +235,10 @@
             Controls.Add(lblFechaDeFinAusenciaEditar);
             Controls.Add(lblFechaDeInicioAusenciaEditar);
             Controls.Add(dgvEditarausencias);
+            ForeColor = Color.FromArgb(19, 116, 125);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmVisualEditarausencias";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmVisualEditarausencias";
             Load += FrmVisualEditarausencias_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEditarausencias).EndInit();
@@ -235,7 +250,6 @@
 
         private DataGridView dgvEditarausencias;
         private Button btnRegistrarausenciaeditar;
-        private Button btnRegistrarausencia;
         private DateTimePicker dtpFechadefin;
         private DateTimePicker dtpFechadeinicio;
         private ComboBox cbAprobacionausencia;
@@ -245,7 +259,6 @@
         private Label lblFechaDeFinAusenciaEditar;
         private Label lblFechaDeInicioAusenciaEditar;
         private ComboBox cbAprobacionEditar;
-        private Label lblAprobacioneditar;
         private TextBox txtIdAusenciaEditar;
         private TextBox txtIdEmpleadoEditar;
         private Button btnEliminarasuenciaeditar;

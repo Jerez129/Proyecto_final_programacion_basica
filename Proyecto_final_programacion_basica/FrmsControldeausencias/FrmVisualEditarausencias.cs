@@ -73,16 +73,16 @@ namespace Capa_Presentacion.FrmsControldeausencias
 
         private void dgvEditarausencias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-          
-                DataGridViewRow fila = dgvEditarausencias.SelectedRows[0];
-                txtIdEmpleadoEditar.Text = fila.Cells["id_Empleado"].Value.ToString();
-                txtIdAusenciaEditar.Text = fila.Cells["id_Ausencia"].Value.ToString();
-                dtpFechadeinicio.Value = Convert.ToDateTime(fila.Cells["FechaInicio"].Value);
-                dtpFechadefin.Value = Convert.ToDateTime(fila.Cells["FechaFin"].Value);
-                cbTipodeausencia.Text = fila.Cells["TipoAusencia"].Value.ToString();
-                cbAprobacionEditar.Text = fila.Cells["Aprobado"].Value.ToString();
-            
-        
+
+            DataGridViewRow fila = dgvEditarausencias.SelectedRows[0];
+            txtIdEmpleadoEditar.Text = fila.Cells["id_Empleado"].Value.ToString();
+            txtIdAusenciaEditar.Text = fila.Cells["id_Ausencia"].Value.ToString();
+            dtpFechadeinicio.Value = Convert.ToDateTime(fila.Cells["FechaInicio"].Value);
+            dtpFechadefin.Value = Convert.ToDateTime(fila.Cells["FechaFin"].Value);
+            cbTipodeausencia.Text = fila.Cells["TipoAusencia"].Value.ToString();
+            cbAprobacionEditar.Text = fila.Cells["Aprobado"].Value.ToString();
+
+
         }
 
         private void btnRegistrarausencia_Click(object sender, EventArgs e)
@@ -98,30 +98,30 @@ namespace Capa_Presentacion.FrmsControldeausencias
                 ausencias.Aprobado = ((KeyValuePair<string, bool>)cbAprobacionEditar.SelectedItem).Value;
 
                 ausencias.Editar(ausencias);
-   
+
                 // Validación
                 string mensajeError;
-                 if (ausencias.ValidacionEditar(out mensajeError))
-                 {
-                     // Si la validación es correcta, registrar la ausencia
+                if (ausencias.ValidacionEditar(out mensajeError))
+                {
+                    // Si la validación es correcta, registrar la ausencia
 
-                     MessageBox.Show("Ausencia editada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+                    MessageBox.Show("Ausencia editada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     LimpiarCampos();
-                     MostrarAusenciasDeEmpleados();
-                 }
-                 else
-                 {
-                     // Si hay un error de validación, mostrar el mensaje de error
-                     MessageBox.Show(mensajeError, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 }
+                    MostrarAusenciasDeEmpleados();
+                }
+                else
+                {
+                    // Si hay un error de validación, mostrar el mensaje de error
+                    MessageBox.Show(mensajeError, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             else
             {
                 MessageBox.Show("Por favor, seleccione una ausencia para editar.");
             }
-          
+
         }
 
         private void btnEliminarasuenciaeditar_Click(object sender, EventArgs e)
@@ -155,6 +155,16 @@ namespace Capa_Presentacion.FrmsControldeausencias
             FrmEntradaausencias frmEntradaausencias = new FrmEntradaausencias();
             frmEntradaausencias.Show();
             this.Close();
+        }
+
+        private void btnRegistrarausencia_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAprobacioneditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

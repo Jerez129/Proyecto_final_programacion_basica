@@ -35,10 +35,8 @@
             btnEmpleados = new Button();
             pnlMenuempleados = new Panel();
             pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             btnControldeausencias = new Button();
-            btnControldenomina = new Button();
             btnControldeempleados = new Button();
             panel1 = new Panel();
             btnConsulta = new Button();
@@ -74,7 +72,6 @@
             pnlbtnEmpleados.SuspendLayout();
             pnlMenuempleados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
             pnlConsulta.SuspendLayout();
@@ -144,36 +141,24 @@
             // pnlMenuempleados
             // 
             pnlMenuempleados.Controls.Add(pictureBox5);
-            pnlMenuempleados.Controls.Add(pictureBox4);
             pnlMenuempleados.Controls.Add(pictureBox3);
             pnlMenuempleados.Controls.Add(btnControldeausencias);
-            pnlMenuempleados.Controls.Add(btnControldenomina);
             pnlMenuempleados.Controls.Add(btnControldeempleados);
             pnlMenuempleados.Location = new Point(6, 47);
             pnlMenuempleados.Name = "pnlMenuempleados";
-            pnlMenuempleados.Size = new Size(229, 124);
+            pnlMenuempleados.Size = new Size(229, 86);
             pnlMenuempleados.TabIndex = 1;
             pnlMenuempleados.Visible = false;
             // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(18, 82);
+            pictureBox5.Location = new Point(18, 51);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(25, 29);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 12;
             pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(18, 47);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(25, 29);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 6;
-            pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -191,27 +176,13 @@
             btnControldeausencias.FlatStyle = FlatStyle.Flat;
             btnControldeausencias.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnControldeausencias.ForeColor = Color.FromArgb(252, 247, 197);
-            btnControldeausencias.Location = new Point(58, 82);
+            btnControldeausencias.Location = new Point(58, 51);
             btnControldeausencias.Name = "btnControldeausencias";
             btnControldeausencias.Size = new Size(168, 29);
             btnControldeausencias.TabIndex = 4;
             btnControldeausencias.Text = "Control de Ausencias";
             btnControldeausencias.UseVisualStyleBackColor = false;
             btnControldeausencias.Click += btnControldeausencias_Click;
-            // 
-            // btnControldenomina
-            // 
-            btnControldenomina.BackColor = Color.FromArgb(19, 116, 125);
-            btnControldenomina.FlatStyle = FlatStyle.Flat;
-            btnControldenomina.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnControldenomina.ForeColor = Color.FromArgb(252, 247, 197);
-            btnControldenomina.Location = new Point(58, 47);
-            btnControldenomina.Name = "btnControldenomina";
-            btnControldenomina.Size = new Size(168, 29);
-            btnControldenomina.TabIndex = 3;
-            btnControldenomina.Text = "Control de Nomina";
-            btnControldenomina.UseVisualStyleBackColor = false;
-            btnControldenomina.Click += btnControldenomina_Click;
             // 
             // btnControldeempleados
             // 
@@ -230,7 +201,7 @@
             // panel1
             // 
             panel1.Controls.Add(btnConsulta);
-            panel1.Location = new Point(6, 177);
+            panel1.Location = new Point(6, 139);
             panel1.Name = "panel1";
             panel1.Size = new Size(229, 38);
             panel1.TabIndex = 2;
@@ -256,7 +227,7 @@
             pnlConsulta.Controls.Add(pictureBox6);
             pnlConsulta.Controls.Add(btnReportedeausencias);
             pnlConsulta.Controls.Add(btnListadeempledos);
-            pnlConsulta.Location = new Point(6, 221);
+            pnlConsulta.Location = new Point(6, 183);
             pnlConsulta.Name = "pnlConsulta";
             pnlConsulta.Size = new Size(229, 93);
             pnlConsulta.TabIndex = 3;
@@ -313,7 +284,7 @@
             // panel3
             // 
             panel3.Controls.Add(btnSistema);
-            panel3.Location = new Point(6, 320);
+            panel3.Location = new Point(6, 282);
             panel3.Name = "panel3";
             panel3.Size = new Size(229, 38);
             panel3.TabIndex = 4;
@@ -339,7 +310,7 @@
             pnlSistema.Controls.Add(btnCerrarsesion);
             pnlSistema.Controls.Add(pictureBox8);
             pnlSistema.Controls.Add(btnAcercade);
-            pnlSistema.Location = new Point(6, 364);
+            pnlSistema.Location = new Point(6, 326);
             pnlSistema.Name = "pnlSistema";
             pnlSistema.Size = new Size(229, 93);
             pnlSistema.TabIndex = 5;
@@ -396,6 +367,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(19, 116, 125);
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(lblMesAño);
             panel2.Controls.Add(lblDomingo);
@@ -584,6 +556,7 @@
             Controls.Add(pnlMenuPrincipal);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPrincipal";
             Load += FrmPrincipal_Load;
             pnlMenuPrincipal.ResumeLayout(false);
@@ -591,7 +564,6 @@
             pnlbtnEmpleados.ResumeLayout(false);
             pnlMenuempleados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             pnlConsulta.ResumeLayout(false);
@@ -618,7 +590,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel pnlMenuempleados;
         private Button btnControldeausencias;
-        private Button btnControldenomina;
         private Button btnControldeempleados;
         private Panel panel1;
         private Button btnConsulta;
@@ -648,7 +619,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;

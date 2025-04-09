@@ -79,7 +79,7 @@ namespace Capa_Presentacion_Proyecto_Final
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
-            /*showPassword = !showPassword;
+            showPassword = !showPassword;
             if (showPassword)
             {
                 txtClave.PasswordChar = '\0';
@@ -89,7 +89,7 @@ namespace Capa_Presentacion_Proyecto_Final
             {
                 txtClave.PasswordChar = '*';
                 pictureBox2.Image = Capa_Presentacion.Properties.Resources.show;
-            }*/
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
