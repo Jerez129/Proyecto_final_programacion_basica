@@ -26,7 +26,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
 
         private void btnMenuprincipal_Click(object sender, EventArgs e)
+
         {
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
             if (pnlMenuPrincipal.Visible == true)
             {
                 pnlMenuPrincipal.Visible = false;
@@ -38,7 +40,9 @@ namespace Capa_Presentacion_Proyecto_Final
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
+
         {
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
             if (pnlMenuempleados.Visible == true)
             {
                 pnlMenuempleados.Visible = false;
@@ -51,6 +55,7 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
             if (pnlConsulta.Visible == true)
             {
                 pnlConsulta.Visible = false;
@@ -63,6 +68,7 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void btnSistema_Click(object sender, EventArgs e)
         {
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
             if (pnlSistema.Visible == true)
             {
                 pnlSistema.Visible = false;
@@ -77,6 +83,7 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void btnControldeempleados_Click(object sender, EventArgs e)
         {
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
             FrmVisualcontroldeempleados frmVisualcontroldeempleados = new FrmVisualcontroldeempleados();
             frmVisualcontroldeempleados.Show();
             this.Hide();
@@ -85,13 +92,15 @@ namespace Capa_Presentacion_Proyecto_Final
         private void btnControldeausencias_Click(object sender, EventArgs e)
         {
             FrmEntradaausencias frm = new FrmEntradaausencias();
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
+            FrmControldeausencias frm = new FrmControldeausencias();
             this.Hide();
             frm.Show();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-
+            this.BackColor = ColorTranslator.FromHtml("#FCF7C5");
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -169,7 +178,9 @@ namespace Capa_Presentacion_Proyecto_Final
             }
         }
         private void btnAtras_Click(object sender, EventArgs e)
+
         {
+
             flpContenedordedias.Controls.Clear();
             //Resta un mes
             mes--;
@@ -207,9 +218,34 @@ namespace Capa_Presentacion_Proyecto_Final
 
         }
 
+        private void btnControldenomina_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnListadeempledos_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnReportedeausencias_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAcercade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarsesion_Click(object sender, EventArgs e)
+        {
+        }
+
         private void pnlMenuPrincipal_Paint(object sender, PaintEventArgs e)
         {
-            
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

@@ -69,14 +69,13 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            this.BackColor = ColorTranslator.FromHtml("#FCF7C5");
 
             // Establecer los placeholders en los campos de usuario y clave
             SetPlaceholder(txtUsuario, "Usuario");
             SetPlaceholder(txtClave, "Clave");
 
         }
-        //private bool showPassword = false;
+        private bool showPassword = false;
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -91,6 +90,11 @@ namespace Capa_Presentacion_Proyecto_Final
                 txtClave.PasswordChar = '*';
                 pictureBox2.Image = Capa_Presentacion.Properties.Resources.show;
             }*/
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Capa_Presentacion
 
         private void ucEspciosparadias_Load(object sender, EventArgs e)
         {
-
+            this.BackColor = ColorTranslator.FromHtml("#0ABFBC");
         }
     }
 }

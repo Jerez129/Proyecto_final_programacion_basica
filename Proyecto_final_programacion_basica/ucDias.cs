@@ -25,7 +25,9 @@ namespace Capa_Presentacion
 
         // Método corregido para configurar la fecha correctamente
         public void ConfigurarDia(int numeroDeDia, DateTime fechaMesAño)
+
         {
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
             lblDias.Text = numeroDeDia.ToString();
 
             // Asignamos correctamente la fecha completa
@@ -34,9 +36,15 @@ namespace Capa_Presentacion
 
         private void ucDias_Click(object sender, EventArgs e)
         {
+            this.BackColor = ColorTranslator.FromHtml("#13747D");
             Frmcalendariodeausencias frmcalendariodeausencias = new Frmcalendariodeausencias(fecha);
             frmcalendariodeausencias.ShowDialog();
 
+        }
+
+        private void lblDias_Click(object sender, EventArgs e)
+        {
+            this.BackColor = ColorTranslator.FromHtml("#FC354C");
         }
     }
 }

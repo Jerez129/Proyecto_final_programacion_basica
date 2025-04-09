@@ -39,5 +39,10 @@ namespace Capa_Presentacion_Proyecto_Final
             frm.Show();
             this.Hide();
         }
+
+        private void FrmVisualcontroldeempleados_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

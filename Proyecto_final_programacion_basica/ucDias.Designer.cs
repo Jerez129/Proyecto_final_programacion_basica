@@ -34,20 +34,24 @@
             // lblDias
             // 
             lblDias.AutoSize = true;
-            lblDias.Location = new Point(18, 10);
+            lblDias.BackColor = Color.FromArgb(19, 116, 125);
+            lblDias.Location = new Point(20, 10);
             lblDias.Name = "lblDias";
-            lblDias.Size = new Size(25, 20);
+            lblDias.Size = new Size(27, 20);
             lblDias.TabIndex = 0;
             lblDias.Text = "00";
+            lblDias.Click += lblDias_Click;
             // 
             // ucDias
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(19, 116, 125);
             Controls.Add(lblDias);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = Color.FromArgb(252, 247, 197);
             Name = "ucDias";
-            Size = new Size(58, 49);
+            Size = new Size(65, 49);
             Load += ucDias_Load;
             Click += ucDias_Click;
             ResumeLayout(false);
