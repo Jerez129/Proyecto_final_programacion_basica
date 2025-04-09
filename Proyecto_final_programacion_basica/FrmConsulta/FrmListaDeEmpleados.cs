@@ -16,11 +16,21 @@ namespace Capa_Presentacion.FrmConsulta
         public FrmListaDeEmpleados()
         {
             InitializeComponent();
+            MostrarEmpleado();
         }
 
+        private void MostrarEmpleado()
+        {
+          
 
+        }
 
         private void FrmListaDeEmpleados_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e)
         {
 
         }

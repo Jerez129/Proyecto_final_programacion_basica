@@ -69,29 +69,37 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
-            // Establecer los placeholders en los campos de usuario y clave
+            // Establecer los placeholders
             SetPlaceholder(txtUsuario, "Usuario");
             SetPlaceholder(txtClave, "Clave");
 
+            // Ocultar la contraseña por defecto
+            txtClave.UseSystemPasswordChar = true;
+
+            // Cargar imagen de ojito cerrado
+            pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide);
+
+            // Asegúrate de que el estado esté sincronizado
+            passwordVisible = false;
         }
 
-        private bool passwordVisible = false;
+
+        private bool passwordVisible = true;
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (passwordVisible)
             {
-                // Oculta la contraseña
-                txtClave.UseSystemPasswordChar = true;
-                pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide); // imagen del ojito cerrado
-                passwordVisible = false;
+                // Muestra la contraseña
+                txtClave.UseSystemPasswordChar = false;
+                pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.show);
+                passwordVisible = false; // <- estaba mal antes
             }
             else
             {
-                // Muestra la contraseña
-                txtClave.UseSystemPasswordChar = false;
-                pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.show); // imagen del ojito abierto
-                passwordVisible = true;
+                // Oculta la contraseña
+                txtClave.UseSystemPasswordChar = true;
+                pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide);
+                passwordVisible = true; // <- estaba mal antes
             }
         }
 

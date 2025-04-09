@@ -61,10 +61,9 @@ namespace Capa_Presentacion.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Byte[].
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] hide
-        {
+        internal static byte[] hide {
             get {
                 object obj = ResourceManager.GetObject("hide", resourceCulture);
                 return ((byte[])(obj));
@@ -72,10 +71,9 @@ namespace Capa_Presentacion.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Byte[].
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] show 
-        {
+        internal static byte[] show {
             get {
                 object obj = ResourceManager.GetObject("show", resourceCulture);
                 return ((byte[])(obj));

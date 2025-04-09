@@ -67,7 +67,6 @@
             // 
             txtClave.Location = new Point(312, 292);
             txtClave.Name = "txtClave";
-            txtClave.PasswordChar = '*';
             txtClave.Size = new Size(144, 27);
             txtClave.TabIndex = 4;
             // 
