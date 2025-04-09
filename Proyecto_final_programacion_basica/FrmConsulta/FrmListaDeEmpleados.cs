@@ -18,18 +18,10 @@ namespace Capa_Presentacion.FrmConsulta
             InitializeComponent();
         }
 
-        private void btnVerConsultasListar_Click(object sender, EventArgs e)
+
+
+        private void FrmListaDeEmpleados_Load(object sender, EventArgs e)
         {
-            /*try
-            {
-                CN_Control_Nomina controlNomina = new CN_Control_Nomina();
-                DataTable datosNomina = controlNomina.MostrarNomina();
-                dgvNomina.DataSource = datosNomina;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
 
         }
     }

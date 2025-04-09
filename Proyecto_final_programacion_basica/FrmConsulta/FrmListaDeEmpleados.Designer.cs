@@ -30,6 +30,8 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvNomina = new DataGridView();
+            btnVolveralmenuprincipal = new Button();
+            txtBuscarEmpleado = new TextBox();
             btnVerConsultasListar = new Button();
             btnVolveralmenuprincipal = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvNomina).BeginInit();
@@ -51,10 +53,21 @@
             dgvNomina.Location = new Point(195, 12);
             dgvNomina.Name = "dgvNomina";
             dgvNomina.RowHeadersWidth = 51;
-            dgvNomina.Size = new Size(1024, 188);
+            dgvNomina.Size = new Size(1425, 596);
             dgvNomina.TabIndex = 0;
             // 
-            // btnVerConsultasListar
+            // btnVolveralmenuprincipal
+            // 
+            btnVolveralmenuprincipal.BackColor = Color.FromArgb(19, 116, 125);
+            btnVolveralmenuprincipal.FlatStyle = FlatStyle.Flat;
+            btnVolveralmenuprincipal.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVolveralmenuprincipal.ForeColor = Color.FromArgb(252, 247, 197);
+            btnVolveralmenuprincipal.Location = new Point(12, 23);
+            btnVolveralmenuprincipal.Name = "btnVolveralmenuprincipal";
+            btnVolveralmenuprincipal.Size = new Size(94, 29);
+            btnVolveralmenuprincipal.TabIndex = 5;
+            btnVolveralmenuprincipal.Text = "Volver";
+            btnVolveralmenuprincipal.UseVisualStyleBackColor = false;
             // 
             btnVerConsultasListar.BackColor = Color.FromArgb(19, 116, 125);
             btnVerConsultasListar.FlatStyle = FlatStyle.Flat;
@@ -67,6 +80,12 @@
             btnVerConsultasListar.Text = "Ver";
             btnVerConsultasListar.UseVisualStyleBackColor = false;
             btnVerConsultasListar.Click += btnVerConsultasListar_Click;
+            // txtBuscarEmpleado
+            // 
+            txtBuscarEmpleado.Location = new Point(757, 54);
+            txtBuscarEmpleado.Name = "txtBuscarEmpleado";
+            txtBuscarEmpleado.Size = new Size(277, 27);
+            txtBuscarEmpleado.TabIndex = 6;
             // 
             // btnVolveralmenuprincipal
             // 
@@ -89,12 +108,19 @@
             ClientSize = new Size(1231, 450);
             Controls.Add(btnVolveralmenuprincipal);
             Controls.Add(btnVerConsultasListar);
+            BackColor = Color.FromArgb(252, 247, 197);
+            ClientSize = new Size(1449, 710);
+            Controls.Add(txtBuscarEmpleado);
+            Controls.Add(btnVolveralmenuprincipal);
             Controls.Add(dgvNomina);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmListaDeEmpleados";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmListaDeEmpleados";
+            Load += FrmListaDeEmpleados_Load;
             ((System.ComponentModel.ISupportInitialize)dgvNomina).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -102,5 +128,7 @@
         private DataGridView dgvNomina;
         private Button btnVerConsultasListar;
         private Button btnVolveralmenuprincipal;
+        private Button btnVolveralmenuprincipal;
+        private TextBox txtBuscarEmpleado;
     }
 }
