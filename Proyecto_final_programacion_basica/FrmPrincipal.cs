@@ -1,4 +1,5 @@
 ﻿using Capa_Presentacion;
+using Capa_Presentacion.FrmConsulta;
 using Capa_Presentacion.FrmsControldeausencias;
 using System;
 using System.Collections.Generic;
@@ -216,13 +217,12 @@ namespace Capa_Presentacion_Proyecto_Final
             }
 
         }
-
-        private void btnControldenomina_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnListadeempledos_Click(object sender, EventArgs e)
         {
+            FrmListaDeEmpleados frmListaDeEmpleados = new FrmListaDeEmpleados();
+            frmListaDeEmpleados.Show();
+            this.Hide();
+
         }
 
         private void btnReportedeausencias_Click(object sender, EventArgs e)
@@ -236,6 +236,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void btnCerrarsesion_Click(object sender, EventArgs e)
         {
+            this.Close();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
         }
 
         private void pnlMenuPrincipal_Paint(object sender, PaintEventArgs e)

@@ -78,6 +78,7 @@
             btnVolveralmenuprincipal.TabIndex = 4;
             btnVolveralmenuprincipal.Text = "Volver";
             btnVolveralmenuprincipal.UseVisualStyleBackColor = false;
+            btnVolveralmenuprincipal.Click += btnVolveralmenuprincipal_Click;
             // 
             // pictureBox2
             // 

@@ -37,5 +37,12 @@ namespace Capa_Presentacion.FrmsControldeausencias
         {
 
         }
+
+        private void btnVolveralmenuprincipal_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Show();
+            this.Close();
+        }
     }
 }
