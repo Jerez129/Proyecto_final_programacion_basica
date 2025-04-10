@@ -75,21 +75,44 @@ namespace Capa_Presentacion_Proyecto_Final
             SetPlaceholder(txtClave, "Clave");
 
         }
-        private bool showPassword = false;
+
+        private bool passwordVisible = false;
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
-            showPassword = !showPassword;
-            if (showPassword)
+            if (passwordVisible)
             {
-                txtClave.PasswordChar = '\0';
-                pictureBox2.Image = Capa_Presentacion.Properties.Resources.hide;
+                // Oculta la contraseña
+                txtClave.UseSystemPasswordChar = true;
+                pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide); // imagen del ojito cerrado
+                passwordVisible = false;
             }
             else
             {
-                txtClave.PasswordChar = '*';
-                pictureBox2.Image = Capa_Presentacion.Properties.Resources.show;
+                // Muestra la contraseña
+                txtClave.UseSystemPasswordChar = false;
+                pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.show); // imagen del ojito abierto
+                passwordVisible = true;
             }
+        }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (var ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+        //Aqui precargo el ojito para que se pueda utilizar desde que se compila el formulario
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Oculta la contraseña por defecto
+            txtClave.UseSystemPasswordChar = true;
+
+            // Carga el ojito cerrado como imagen inicial
+            pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide);
+
+            // Inicializa el estado
+            passwordVisible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
