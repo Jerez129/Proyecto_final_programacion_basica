@@ -1,4 +1,5 @@
 ﻿using Capa_Negocio;
+using Capa_Presentacion_Proyecto_Final;
 using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
@@ -74,7 +75,7 @@ namespace Capa_Presentacion.FrmConsulta
             // Si hay texto, buscamos en ambos campos (Nombre y Apellido)
             if (!string.IsNullOrEmpty(texto))
             {
-                filtro = $"(Nombre LIKE '%{texto}%' OR Apellido LIKE '%{texto}%')"; 
+                filtro = $"(Nombre LIKE '%{texto}%' OR Apellido LIKE '%{texto}%')";
             }
             else if (chkFiltrarFecha.Checked)
             {
@@ -169,9 +170,11 @@ namespace Capa_Presentacion.FrmConsulta
             }
         }
 
-        private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e)
+        private void btnVolveralmenuprincipal_Click(object sender, EventArgs e)
         {
-
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Show();
+            this.Close();
         }
     }
 }

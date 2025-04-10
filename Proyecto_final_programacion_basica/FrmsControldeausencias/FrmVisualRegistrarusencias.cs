@@ -66,7 +66,7 @@ namespace Capa_Presentacion.FrmsControldeasencias
             dtpFechadeinicio.Value = DateTime.Now;
             dtpFechadefin.Value = DateTime.Now;
             cbTipodeausencia.SelectedIndex = -1;
-            cbAprobacionausencia.SelectedIndex = -1; 
+            cbAprobacionausencia.SelectedIndex = -1;
         }
 
         private void FrmVisualRegistrarusencias_Load(object sender, EventArgs e)
@@ -108,5 +108,9 @@ namespace Capa_Presentacion.FrmsControldeasencias
             }
         }
 
+        private void btnVolveralmenuprincipal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

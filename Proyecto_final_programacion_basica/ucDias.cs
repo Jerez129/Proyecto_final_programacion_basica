@@ -44,7 +44,7 @@ namespace Capa_Presentacion
 
         private void lblDias_Click(object sender, EventArgs e)
         {
-            this.BackColor = ColorTranslator.FromHtml("#FC354C");
+         
         }
     }
 }

@@ -72,67 +72,81 @@ namespace Capa_Presentacion.FrmsControldeempleados
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
-            CN_Control_Empleados empleado = new CN_Control_Empleados();
-            empleado.IdEmpleado = Convert.ToInt32(txtId_Empleadoeditar.Text);
-            empleado.Nombre = txtNombreeditar.Text;
-            empleado.Apellido = txtApellidoeditar.Text;
-            empleado.Cedula = txtCedulaeditar.Text;
-            empleado.Correo = txtCorreoeditar.Text;
-            empleado.Telefono = txtTelefonoeditar.Text;
-            empleado.FechaNacimiento = dtpFechanacimientoeditar.Value;
-            empleado.FechaIngreso = dtpFechaingresoeditar.Value;
-            // Validación para el salario base
-            if (string.IsNullOrWhiteSpace(txtSalariobaseeditar.Text) || !decimal.TryParse(txtSalariobaseeditar.Text, out decimal salario))
+            if (dgvEmpleadosEditar.SelectedRows.Count > 0)
             {
-                MessageBox.Show("El salario base debe ser un número válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Salir si el salario base no es válido
-            }
-            empleado.SalarioBase = salario; // Asignar el salario base al objeto empleado
-            empleado.Cargo = cbCargoeditar.Text;
-            empleado.IdDireccion = Convert.ToInt32(cbDireccioneditar.SelectedValue);
-            empleado.IdDepartamento = Convert.ToInt32(cbDepartamentoeditar.SelectedValue);
-            empleado.IdGenero = Convert.ToInt32(cbGeneroeditar.SelectedValue);
 
-            string mensajeError;
-            if (empleado.ValidacionEditar(out mensajeError))  // Llamamos a Validacion con out
 
-            {
-                // Si la validación es correcta, registrar el empleado
-                empleado.Editar(empleado);
-                MessageBox.Show("Empleado editado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiarcampos();
+                CN_Control_Empleados empleado = new CN_Control_Empleados();
+                empleado.IdEmpleado = Convert.ToInt32(txtId_Empleadoeditar.Text);
+                empleado.Nombre = txtNombreeditar.Text;
+                empleado.Apellido = txtApellidoeditar.Text;
+                empleado.Cedula = txtCedulaeditar.Text;
+                empleado.Correo = txtCorreoeditar.Text;
+                empleado.Telefono = txtTelefonoeditar.Text;
+                empleado.FechaNacimiento = dtpFechanacimientoeditar.Value;
+                empleado.FechaIngreso = dtpFechaingresoeditar.Value;
+                // Validación para el salario base
+                if (string.IsNullOrWhiteSpace(txtSalariobaseeditar.Text) || !decimal.TryParse(txtSalariobaseeditar.Text, out decimal salario))
+                {
+                    MessageBox.Show("El salario base debe ser un número válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Salir si el salario base no es válido
+                }
+                empleado.SalarioBase = salario; // Asignar el salario base al objeto empleado
+                empleado.Cargo = cbCargoeditar.Text;
+                empleado.IdDireccion = Convert.ToInt32(cbDireccioneditar.SelectedValue);
+                empleado.IdDepartamento = Convert.ToInt32(cbDepartamentoeditar.SelectedValue);
+                empleado.IdGenero = Convert.ToInt32(cbGeneroeditar.SelectedValue);
+
+                string mensajeError;
+                if (empleado.ValidacionEditar(out mensajeError))  // Llamamos a Validacion con out
+
+                {
+                    // Si la validación es correcta, registrar el empleado
+                    empleado.Editar(empleado);
+                    MessageBox.Show("Empleado editado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiarcampos();
+                }
+                else
+                {
+                    // Si hay un error de validación, mostrar el mensaje de error
+                    MessageBox.Show(mensajeError, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                Mostrarempleadodetallado();
+
             }
             else
             {
-                // Si hay un error de validación, mostrar el mensaje de error
-                MessageBox.Show(mensajeError, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, seleccione un empleado para editar.");
+                return;
             }
- 
-            Mostrarempleadodetallado();
-
+          
         }
 
 
 
         private void dgvEmpleadosEditar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvEmpleadosEditar.SelectedRows.Count > 0)
+            // Verifica que no haya clic en la casilla de selección de fila (RowIndex == -1)
+            if (e.RowIndex >= 0) // Aseguramos que se haya hecho clic en una fila válida
             {
-                DataGridViewRow fila = dgvEmpleadosEditar.SelectedRows[0];
-                txtId_Empleadoeditar.Text = fila.Cells["id_Empleado"].Value.ToString();
-                txtNombreeditar.Text = fila.Cells["Nombre"].Value.ToString();
-                txtApellidoeditar.Text = fila.Cells["Apellido"].Value.ToString();
-                txtCedulaeditar.Text = fila.Cells["Cedula"].Value.ToString();
-                txtCorreoeditar.Text = fila.Cells["Correo"].Value.ToString();
-                txtTelefonoeditar.Text = fila.Cells["Telefono"].Value.ToString();
-                dtpFechanacimientoeditar.Value = Convert.ToDateTime(fila.Cells["FechaNacimiento"].Value);
-                dtpFechaingresoeditar.Value = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
-                txtSalariobaseeditar.Text = fila.Cells["SalarioBase"].Value.ToString();
-                cbCargoeditar.Text = fila.Cells["Cargo"].Value.ToString();
-                cbDepartamentoeditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Departamento"].Value);
-                cbDireccioneditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Direccion"].Value);
-                cbGeneroeditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Genero"].Value);
+                if (dgvEmpleadosEditar.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow fila = dgvEmpleadosEditar.SelectedRows[0];
+                    txtId_Empleadoeditar.Text = fila.Cells["id_Empleado"].Value.ToString();
+                    txtNombreeditar.Text = fila.Cells["Nombre"].Value.ToString();
+                    txtApellidoeditar.Text = fila.Cells["Apellido"].Value.ToString();
+                    txtCedulaeditar.Text = fila.Cells["Cedula"].Value.ToString();
+                    txtCorreoeditar.Text = fila.Cells["Correo"].Value.ToString();
+                    txtTelefonoeditar.Text = fila.Cells["Telefono"].Value.ToString();
+                    dtpFechanacimientoeditar.Value = Convert.ToDateTime(fila.Cells["FechaNacimiento"].Value);
+                    dtpFechaingresoeditar.Value = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
+                    txtSalariobaseeditar.Text = fila.Cells["SalarioBase"].Value.ToString();
+                    cbCargoeditar.Text = fila.Cells["Cargo"].Value.ToString();
+                    cbDepartamentoeditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Departamento"].Value);
+                    cbDireccioneditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Direccion"].Value);
+                    cbGeneroeditar.SelectedValue = Convert.ToInt32(fila.Cells["id_Genero"].Value);
+                }
             }
         }
 
@@ -166,5 +180,54 @@ namespace Capa_Presentacion.FrmsControldeempleados
             this.Close();
             frm.Show();
         }
+
+        private void txtNombreeditar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo letras y retroceso, impedir números y símbolos
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+
+        }
+
+        private void txtApellidoeditar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo letras y retroceso, impedir números y símbolos
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtCedulaeditar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo numeros y retroceso, impedir letras
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtTelefonoeditar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo numeros y retroceso, impedir letras
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtSalariobaseeditar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo numeros y retroceso, impedir letras
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+
+        }
+
+
     }
 }

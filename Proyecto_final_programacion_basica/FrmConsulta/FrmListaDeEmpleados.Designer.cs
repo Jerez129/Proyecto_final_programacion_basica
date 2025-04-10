@@ -57,6 +57,7 @@
             dgvListadeempleados.GridColor = Color.FromArgb(19, 116, 125);
             dgvListadeempleados.Location = new Point(22, 86);
             dgvListadeempleados.Name = "dgvListadeempleados";
+            dgvListadeempleados.ReadOnly = true;
             dgvListadeempleados.RowHeadersWidth = 51;
             dgvListadeempleados.Size = new Size(1693, 629);
             dgvListadeempleados.TabIndex = 0;
@@ -73,6 +74,7 @@
             btnVolveralmenuprincipal.TabIndex = 5;
             btnVolveralmenuprincipal.Text = "Volver";
             btnVolveralmenuprincipal.UseVisualStyleBackColor = false;
+            btnVolveralmenuprincipal.Click += btnVolveralmenuprincipal_Click;
             // 
             // txtBuscarEmpleado
             // 

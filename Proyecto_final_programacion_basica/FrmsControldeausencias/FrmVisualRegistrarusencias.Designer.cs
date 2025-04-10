@@ -142,6 +142,7 @@
             // 
             txtNombreAusencia.Location = new Point(182, 142);
             txtNombreAusencia.Name = "txtNombreAusencia";
+            txtNombreAusencia.ReadOnly = true;
             txtNombreAusencia.Size = new Size(187, 27);
             txtNombreAusencia.TabIndex = 7;
             // 
@@ -149,6 +150,7 @@
             // 
             txtApellidoAusencia.Location = new Point(182, 185);
             txtApellidoAusencia.Name = "txtApellidoAusencia";
+            txtApellidoAusencia.ReadOnly = true;
             txtApellidoAusencia.Size = new Size(187, 27);
             txtApellidoAusencia.TabIndex = 8;
             // 
@@ -156,11 +158,13 @@
             // 
             txtCedulaAusencia.Location = new Point(182, 232);
             txtCedulaAusencia.Name = "txtCedulaAusencia";
+            txtCedulaAusencia.ReadOnly = true;
             txtCedulaAusencia.Size = new Size(187, 27);
             txtCedulaAusencia.TabIndex = 9;
             // 
             // cbTipodeausencia
             // 
+            cbTipodeausencia.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipodeausencia.FormattingEnabled = true;
             cbTipodeausencia.Location = new Point(182, 374);
             cbTipodeausencia.Name = "cbTipodeausencia";
@@ -169,6 +173,7 @@
             // 
             // cbAprobacionausencia
             // 
+            cbAprobacionausencia.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAprobacionausencia.FormattingEnabled = true;
             cbAprobacionausencia.Items.AddRange(new object[] { "1", "0" });
             cbAprobacionausencia.Location = new Point(182, 421);
@@ -226,6 +231,7 @@
             btnVolveralmenuprincipal.TabIndex = 19;
             btnVolveralmenuprincipal.Text = "Volver";
             btnVolveralmenuprincipal.UseVisualStyleBackColor = false;
+            btnVolveralmenuprincipal.Click += btnVolveralmenuprincipal_Click;
             // 
             // FrmVisualRegistrarusencias
             // 

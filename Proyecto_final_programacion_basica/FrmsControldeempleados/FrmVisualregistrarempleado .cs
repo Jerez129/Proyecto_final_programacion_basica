@@ -73,7 +73,7 @@ namespace Capa_Presentacion_Proyecto_Final
                 MessageBox.Show(mensajeError, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-          
+
         }
 
         private void FrmVisualregistrarempleado_Load(object sender, EventArgs e)
@@ -100,10 +100,56 @@ namespace Capa_Presentacion_Proyecto_Final
         private void btnCerrarvisualregistraremplead_Click(object sender, EventArgs e)
         {
             FrmVisualcontroldeempleados frm = new FrmVisualcontroldeempleados();
-              this.Close();
-              frm.Show();
+            this.Close();
+            frm.Show();
         }
 
+
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo letras y retroceso, impedir números y símbolos
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo letras y retroceso, impedir números y símbolos
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y retroceso
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y retroceso
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
+
+        private void txtSalariobase_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir solo números y retroceso
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
     }
 
 }

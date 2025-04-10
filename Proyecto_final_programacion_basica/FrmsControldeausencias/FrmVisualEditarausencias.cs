@@ -73,15 +73,26 @@ namespace Capa_Presentacion.FrmsControldeausencias
 
         private void dgvEditarausencias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+             if (e.RowIndex >= 0) // Aseguramos que se haya hecho clic en una fila válida
+            {
+                if (dgvEditarausencias.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow fila = dgvEditarausencias.SelectedRows[0];
+                    txtIdEmpleadoEditar.Text = fila.Cells["id_Empleado"].Value.ToString();
+                    txtIdAusenciaEditar.Text = fila.Cells["id_Ausencia"].Value.ToString();
+                    dtpFechadeinicio.Value = Convert.ToDateTime(fila.Cells["FechaInicio"].Value);
+                    dtpFechadefin.Value = Convert.ToDateTime(fila.Cells["FechaFin"].Value);
+                    cbTipodeausencia.Text = fila.Cells["TipoAusencia"].Value.ToString();
+                    cbAprobacionEditar.Text = fila.Cells["Aprobado"].Value.ToString();
 
-            DataGridViewRow fila = dgvEditarausencias.SelectedRows[0];
-            txtIdEmpleadoEditar.Text = fila.Cells["id_Empleado"].Value.ToString();
-            txtIdAusenciaEditar.Text = fila.Cells["id_Ausencia"].Value.ToString();
-            dtpFechadeinicio.Value = Convert.ToDateTime(fila.Cells["FechaInicio"].Value);
-            dtpFechadefin.Value = Convert.ToDateTime(fila.Cells["FechaFin"].Value);
-            cbTipodeausencia.Text = fila.Cells["TipoAusencia"].Value.ToString();
-            cbAprobacionEditar.Text = fila.Cells["Aprobado"].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona una fila.");
+                }
 
+            }
+          
 
         }
 

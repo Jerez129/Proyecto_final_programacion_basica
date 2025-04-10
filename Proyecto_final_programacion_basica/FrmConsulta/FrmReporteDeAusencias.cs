@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Negocio;
+using Capa_Presentacion_Proyecto_Final;
 using ClosedXML.Excel;
 
 namespace Capa_Presentacion.FrmConsulta
@@ -19,8 +20,6 @@ namespace Capa_Presentacion.FrmConsulta
             InitializeComponent();
             MostrarReporte();
             CargarTiposAusencias();
-            CargarAprobacion();
-            
         }
         private DataTable tablaAusencias;
 
@@ -29,30 +28,24 @@ namespace Capa_Presentacion.FrmConsulta
             CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
             DataTable dt = ausencias.MostrarTipodeausencia();
 
-            cbTipoasuencia.DataSource = dt;
-            cbTipoasuencia.DisplayMember = "Tipo";  // La columna visible
-            cbTipoasuencia.ValueMember = "id_Tipo_Ausencia";  // El valor interno
+            cbTipodeausencias.DataSource = dt;
+            cbTipodeausencias.DisplayMember = "Tipo";  // La columna visible
+            cbTipodeausencias.ValueMember = "id_Tipo_Ausencia";  // El valor interno
         }
 
-        private void CargarAprobacion()
-        {
-            // Crear la lista de valores gráficos con los valores booleanos
-            List<KeyValuePair<string, bool>> estados = new List<KeyValuePair<string, bool>>
-            {
-             new KeyValuePair<string, bool>("Aprobado", true),   // Para "Aprobado" será true
-             new KeyValuePair<string, bool>("No Aprobado", false) // Para "No Aprobado" será false
-            };
-
-            // Configurar el ComboBox
-            cbAprobado.DataSource = estados;
-            cbAprobado.DisplayMember = "Key";  // Muestra "Aprobado" o "No Aprobado"
-            cbAprobado.ValueMember = "Value";  // El valor será true o false
-            cbAprobado.SelectedIndex = 0;  // Establecer por defecto "Aprobado"
-        }
         private void FrmReporteDeAusencias_Load(object sender, EventArgs e)
         {
-            cbAprobado.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
-            cbTipoasuencia.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
+
+            cbTipodeausencias.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
+        }
+
+        private void limpiarcampos()
+        {
+            txtNombre.Clear();
+            cbTipodeausencias.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
+            dtpFechaInicio.Value = DateTime.Now;
+            dtpFechafin.Value = DateTime.Now;
+            checkBox1.Checked = false; // Desmarcar el checkbox
         }
 
         private void MostrarReporte()
@@ -70,78 +63,68 @@ namespace Capa_Presentacion.FrmConsulta
             if (tablaAusencias == null) return;
 
             string texto = txtNombre.Text.Trim().Replace("'", "''");
+            string tipoAusencia = cbTipodeausencias.Text;
 
-            // Obtener el valor del ComboBox de tipo de ausencia
-            string tipoAusencia = cbTipoasuencia.SelectedValue?.ToString();
 
-            // Obtener el valor del ComboBox de aprobado (Booleano)
-            bool? aprobado = cbAprobado.SelectedValue as bool?;
+            // Obtener las fechas seleccionadas
+            DateTime fechaInicio = dtpFechaInicio.Value.Date;
+            DateTime fechaFin = dtpFechafin.Value.Date;
 
-            // Obtener la fecha seleccionada en el DateTimePicker
-            DateTime fechaSeleccionada = dtpFechaausencia.Value.Date;
-
-            // Construir el filtro según las condiciones
+            // Construir el filtro
             string filtro = "";
 
-            // Si hay texto en el nombre o apellido
+            // Filtro por texto (Nombre o Apellido)
             if (!string.IsNullOrEmpty(texto))
             {
                 filtro = $"(Nombre LIKE '%{texto}%' OR Apellido LIKE '%{texto}%')";
             }
 
-            // Filtrar por tipo de ausencia
+            // Filtro por fechas (si el checkbox está marcado)
+            if (checkBox1.Checked)
+            {
+                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
+                filtro += $"FechaInicio >= #{fechaInicio:MM/dd/yyyy}# AND FechaInicio <= #{fechaFin:MM/dd/yyyy}#";
+            }
+
+            // Filtro por tipo de ausencia
             if (!string.IsNullOrEmpty(tipoAusencia))
             {
                 if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
-                filtro += $"TipoAusencia = '{tipoAusencia}'";
+                filtro += $"TipoAusencia LIKE '%{tipoAusencia}%'";
             }
 
-            // Filtrar por aprobado
-            if (aprobado.HasValue)
-            {
-                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
-                filtro += $"Aprobado = {Convert.ToInt32(aprobado.Value)}";  // Utiliza directamente el valor booleano (1 o 0)
-            }
+            // Aplicar el filtro al DataView
+            DataView vista = tablaAusencias.DefaultView;
+            vista.RowFilter = filtro;
 
-            // Filtrar por fecha de ausencia
-            if (fechaSeleccionada != DateTime.MinValue)
-            {
-                if (!string.IsNullOrEmpty(filtro)) filtro += " AND ";
-                filtro += $"FechaInicio = '{fechaSeleccionada:yyyy-MM-dd}'";  // Ajustar el formato de la fecha
-            }
-
-            // Mostrar el filtro para depurar
-            MessageBox.Show($"Filtro aplicado: {filtro}");
-
-            // Aplicar el filtro a la vista
-            if (dgvReportedeausencias.DataSource is DataTable tablaReporte)
-            {
-                tablaReporte.DefaultView.RowFilter = filtro;
-            }
+            dgvReportedeausencias.DataSource = vista;
         }
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-           FiltrarDatos();
+            FiltrarDatos();
         }
 
-        private void cbTipoasuencia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          FiltrarDatos();
-        }
-
-        private void cbAprobado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           FiltrarDatos();
-        }
-
-        private void dtpFechaausencia_ValueChanged(object sender, EventArgs e)
-        {
-           FiltrarDatos();
-        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-           FiltrarDatos();
+            FiltrarDatos();
+        }
+
+
+        private void cbTipodeausencias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
+        }
+
+        private void dtpFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
+
+        }
+
+        private void dtpFechafin_ValueChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
         }
 
         private void btnExportaraexcel_Click(object sender, EventArgs e)
@@ -182,6 +165,18 @@ namespace Capa_Presentacion.FrmConsulta
                 }
             }
 
+        }
+
+        private void btnLimpiarcampos_Click(object sender, EventArgs e)
+        {
+            limpiarcampos();
+        }
+
+        private void btnVolveralmenuprincipal_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Show();
+            this.Close();
         }
     }
 }

@@ -89,8 +89,9 @@
             // 
             // cbCargoeditar
             // 
+            cbCargoeditar.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCargoeditar.FormattingEnabled = true;
-            cbCargoeditar.Items.AddRange(new object[] { "Gerente de Distribución", "", "", "Gerente de Logística", "", "", "Supervisor de Distribución", "", "", "Supervisor de Almacén", "", "", "Auxiliar de Distribución", "", "", "Chofer de Distribución", "", "", "Técnico de Productividad", "", "", "Técnico en Logística", "", "", "Coordinador de Seguridad Industrial", "", "", "Técnico en Control de Calidad", "", "", "Técnico de gente y gestión ", "", "", "Gerente de Ventas", "Asesor de ventas" });
+            cbCargoeditar.Items.AddRange(new object[] { "Gerente de Distribución", "Gerente de Logística", "Supervisor de Distribución", "Supervisor de Almacén", "Auxiliar de Distribución", "Chofer de Distribución", "Técnico de Productividad", "Técnico en Logística", "Coordinador de Seguridad Industrial", "Técnico en Control de Calidad", "Técnico de gente y gestión ", "Gerente de Ventas", "Asesor de ventas" });
             cbCargoeditar.Location = new Point(175, 302);
             cbCargoeditar.Name = "cbCargoeditar";
             cbCargoeditar.Size = new Size(190, 28);
@@ -109,6 +110,7 @@
             // 
             // cbGeneroeditar
             // 
+            cbGeneroeditar.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGeneroeditar.FormattingEnabled = true;
             cbGeneroeditar.Location = new Point(175, 404);
             cbGeneroeditar.Name = "cbGeneroeditar";
@@ -117,14 +119,16 @@
             // 
             // cbDireccioneditar
             // 
+            cbDireccioneditar.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDireccioneditar.FormattingEnabled = true;
             cbDireccioneditar.Location = new Point(175, 370);
             cbDireccioneditar.Name = "cbDireccioneditar";
-            cbDireccioneditar.Size = new Size(362, 28);
+            cbDireccioneditar.Size = new Size(415, 28);
             cbDireccioneditar.TabIndex = 42;
             // 
             // cbDepartamentoeditar
             // 
+            cbDepartamentoeditar.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDepartamentoeditar.FormattingEnabled = true;
             cbDepartamentoeditar.Location = new Point(175, 336);
             cbDepartamentoeditar.Name = "cbDepartamentoeditar";
@@ -137,6 +141,7 @@
             txtTelefonoeditar.Name = "txtTelefonoeditar";
             txtTelefonoeditar.Size = new Size(233, 27);
             txtTelefonoeditar.TabIndex = 40;
+            txtTelefonoeditar.KeyPress += txtTelefonoeditar_KeyPress;
             // 
             // txtCorreoeditar
             // 
@@ -151,6 +156,7 @@
             txtCedulaeditar.Name = "txtCedulaeditar";
             txtCedulaeditar.Size = new Size(233, 27);
             txtCedulaeditar.TabIndex = 38;
+            txtCedulaeditar.KeyPress += txtCedulaeditar_KeyPress;
             // 
             // txtApellidoeditar
             // 
@@ -158,6 +164,7 @@
             txtApellidoeditar.Name = "txtApellidoeditar";
             txtApellidoeditar.Size = new Size(233, 27);
             txtApellidoeditar.TabIndex = 37;
+            txtApellidoeditar.KeyPress += txtApellidoeditar_KeyPress;
             // 
             // txtNombreeditar
             // 
@@ -165,6 +172,7 @@
             txtNombreeditar.Name = "txtNombreeditar";
             txtNombreeditar.Size = new Size(233, 27);
             txtNombreeditar.TabIndex = 36;
+            txtNombreeditar.KeyPress += txtNombreeditar_KeyPress;
             // 
             // lbIdgeneroeditar
             // 
@@ -270,10 +278,11 @@
             dgvEmpleadosEditar.BackgroundColor = Color.FromArgb(19, 116, 125);
             dgvEmpleadosEditar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEmpleadosEditar.GridColor = Color.FromArgb(19, 116, 125);
-            dgvEmpleadosEditar.Location = new Point(550, 83);
+            dgvEmpleadosEditar.Location = new Point(607, 83);
             dgvEmpleadosEditar.Name = "dgvEmpleadosEditar";
+            dgvEmpleadosEditar.ReadOnly = true;
             dgvEmpleadosEditar.RowHeadersWidth = 51;
-            dgvEmpleadosEditar.Size = new Size(966, 465);
+            dgvEmpleadosEditar.Size = new Size(987, 465);
             dgvEmpleadosEditar.TabIndex = 49;
             dgvEmpleadosEditar.CellClick += dgvEmpleadosEditar_CellClick;
             // 
@@ -319,7 +328,7 @@
             btnCerrarvisualeditarempleado.FlatStyle = FlatStyle.Flat;
             btnCerrarvisualeditarempleado.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnCerrarvisualeditarempleado.ForeColor = Color.FromArgb(252, 247, 197);
-            btnCerrarvisualeditarempleado.Location = new Point(1422, 599);
+            btnCerrarvisualeditarempleado.Location = new Point(1444, 599);
             btnCerrarvisualeditarempleado.Name = "btnCerrarvisualeditarempleado";
             btnCerrarvisualeditarempleado.Size = new Size(94, 29);
             btnCerrarvisualeditarempleado.TabIndex = 53;
@@ -333,6 +342,7 @@
             txtSalariobaseeditar.Name = "txtSalariobaseeditar";
             txtSalariobaseeditar.Size = new Size(233, 27);
             txtSalariobaseeditar.TabIndex = 55;
+            txtSalariobaseeditar.KeyPress += txtSalariobaseeditar_KeyPress;
             // 
             // lblSalariobaseeditar
             // 
@@ -350,7 +360,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(252, 247, 197);
-            ClientSize = new Size(1567, 712);
+            ClientSize = new Size(1620, 712);
             Controls.Add(txtSalariobaseeditar);
             Controls.Add(lblSalariobaseeditar);
             Controls.Add(btnCerrarvisualeditarempleado);

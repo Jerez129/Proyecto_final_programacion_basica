@@ -36,7 +36,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ForeColor = Color.FromArgb(252, 247, 197);
             Name = "ucEspciosparadias";
-            Size = new Size(58, 49);
+            Size = new Size(65, 49);
             Load += ucEspciosparadias_Load;
             ResumeLayout(false);
         }

@@ -30,13 +30,13 @@ namespace Capa_Presentacion
 
         }
 
-      /* private void CargarAusencias()
-        {
+        /* private void CargarAusencias()
+          {
 
-            CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
-            DataTable dt = ausencias.Mostrar();
-            dgvAusenciascalendario.DataSource = dt;
-        }*/
+              CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
+              DataTable dt = ausencias.Mostrar();
+              dgvAusenciascalendario.DataSource = dt;
+          }*/
 
         private void CargarAusencias()
         {
@@ -51,6 +51,10 @@ namespace Capa_Presentacion
             dgvAusenciascalendario.DataSource = dt; // Carga los datos en el DataGridView
         }
 
+        private void btnCerrarreportedecalendario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

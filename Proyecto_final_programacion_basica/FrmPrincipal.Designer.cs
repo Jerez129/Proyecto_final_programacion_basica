@@ -385,7 +385,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(250, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1194, 688);
+            panel2.Size = new Size(1279, 688);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
             // 
@@ -404,7 +404,7 @@
             lblMesAño.AutoSize = true;
             lblMesAño.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMesAño.ForeColor = Color.FromArgb(252, 247, 197);
-            lblMesAño.Location = new Point(857, 50);
+            lblMesAño.Location = new Point(883, 55);
             lblMesAño.Name = "lblMesAño";
             lblMesAño.Size = new Size(77, 20);
             lblMesAño.TabIndex = 9;
@@ -415,7 +415,7 @@
             lblDomingo.AutoSize = true;
             lblDomingo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDomingo.ForeColor = Color.FromArgb(252, 247, 197);
-            lblDomingo.Location = new Point(684, 75);
+            lblDomingo.Location = new Point(700, 75);
             lblDomingo.Name = "lblDomingo";
             lblDomingo.Size = new Size(29, 20);
             lblDomingo.TabIndex = 6;
@@ -426,7 +426,7 @@
             lblViernes.AutoSize = true;
             lblViernes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblViernes.ForeColor = Color.FromArgb(252, 247, 197);
-            lblViernes.Location = new Point(1009, 75);
+            lblViernes.Location = new Point(1062, 75);
             lblViernes.Name = "lblViernes";
             lblViernes.Size = new Size(23, 20);
             lblViernes.TabIndex = 8;
@@ -437,7 +437,7 @@
             lblJueves.AutoSize = true;
             lblJueves.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblJueves.ForeColor = Color.FromArgb(252, 247, 197);
-            lblJueves.Location = new Point(945, 75);
+            lblJueves.Location = new Point(994, 75);
             lblJueves.Name = "lblJueves";
             lblJueves.Size = new Size(25, 20);
             lblJueves.TabIndex = 7;
@@ -448,7 +448,7 @@
             lblSabado.AutoSize = true;
             lblSabado.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSabado.ForeColor = Color.FromArgb(252, 247, 197);
-            lblSabado.Location = new Point(1074, 75);
+            lblSabado.Location = new Point(1132, 75);
             lblSabado.Name = "lblSabado";
             lblSabado.Size = new Size(25, 20);
             lblSabado.TabIndex = 7;
@@ -459,7 +459,7 @@
             lblMiercoles.AutoSize = true;
             lblMiercoles.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMiercoles.ForeColor = Color.FromArgb(252, 247, 197);
-            lblMiercoles.Location = new Point(880, 75);
+            lblMiercoles.Location = new Point(923, 75);
             lblMiercoles.Name = "lblMiercoles";
             lblMiercoles.Size = new Size(27, 20);
             lblMiercoles.TabIndex = 6;
@@ -470,7 +470,7 @@
             lblMartes.AutoSize = true;
             lblMartes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMartes.ForeColor = Color.FromArgb(252, 247, 197);
-            lblMartes.Location = new Point(812, 75);
+            lblMartes.Location = new Point(847, 75);
             lblMartes.Name = "lblMartes";
             lblMartes.Size = new Size(31, 20);
             lblMartes.TabIndex = 5;
@@ -481,7 +481,7 @@
             lblLunes.AutoSize = true;
             lblLunes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLunes.ForeColor = Color.FromArgb(252, 247, 197);
-            lblLunes.Location = new Point(753, 75);
+            lblLunes.Location = new Point(775, 75);
             lblLunes.Name = "lblLunes";
             lblLunes.Size = new Size(26, 20);
             lblLunes.TabIndex = 4;
@@ -493,7 +493,7 @@
             btnAtras.FlatStyle = FlatStyle.Flat;
             btnAtras.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAtras.ForeColor = Color.FromArgb(19, 116, 125);
-            btnAtras.Location = new Point(907, 513);
+            btnAtras.Location = new Point(953, 490);
             btnAtras.Name = "btnAtras";
             btnAtras.Size = new Size(94, 29);
             btnAtras.TabIndex = 3;
@@ -507,7 +507,7 @@
             btnSiguiente.FlatStyle = FlatStyle.Flat;
             btnSiguiente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSiguiente.ForeColor = Color.FromArgb(19, 116, 125);
-            btnSiguiente.Location = new Point(1006, 513);
+            btnSiguiente.Location = new Point(1052, 490);
             btnSiguiente.Name = "btnSiguiente";
             btnSiguiente.Size = new Size(94, 29);
             btnSiguiente.TabIndex = 2;
@@ -520,7 +520,7 @@
             flpContenedordedias.BackColor = Color.FromArgb(252, 247, 197);
             flpContenedordedias.Location = new Point(684, 98);
             flpContenedordedias.Name = "flpContenedordedias";
-            flpContenedordedias.Size = new Size(415, 386);
+            flpContenedordedias.Size = new Size(497, 386);
             flpContenedordedias.TabIndex = 1;
             // 
             // btnMenuprincipal
@@ -551,7 +551,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1444, 688);
+            ClientSize = new Size(1529, 688);
             Controls.Add(panel2);
             Controls.Add(pnlMenuPrincipal);
             FormBorderStyle = FormBorderStyle.None;

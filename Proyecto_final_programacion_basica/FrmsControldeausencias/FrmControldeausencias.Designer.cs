@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dgvEmpleadosbasico = new DataGridView();
             btnVisualRegistrarausencia = new Button();
-            btnEditar = new Button();
             btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleadosbasico).BeginInit();
             SuspendLayout();
@@ -40,26 +39,27 @@
             // dgvEmpleadosbasico
             // 
             dgvEmpleadosbasico.BackgroundColor = Color.FromArgb(252, 247, 197);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(252, 247, 197);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(10, 191, 188);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvEmpleadosbasico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(252, 247, 197);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(10, 191, 188);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvEmpleadosbasico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvEmpleadosbasico.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(252, 247, 197);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(10, 191, 188);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvEmpleadosbasico.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(252, 247, 197);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(10, 191, 188);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvEmpleadosbasico.DefaultCellStyle = dataGridViewCellStyle4;
             dgvEmpleadosbasico.GridColor = Color.FromArgb(252, 247, 197);
             dgvEmpleadosbasico.Location = new Point(55, 82);
             dgvEmpleadosbasico.Name = "dgvEmpleadosbasico";
+            dgvEmpleadosbasico.ReadOnly = true;
             dgvEmpleadosbasico.RowHeadersWidth = 51;
             dgvEmpleadosbasico.Size = new Size(955, 344);
             dgvEmpleadosbasico.TabIndex = 15;
@@ -77,19 +77,6 @@
             btnVisualRegistrarausencia.Text = "Registrar";
             btnVisualRegistrarausencia.UseVisualStyleBackColor = false;
             btnVisualRegistrarausencia.Click += btnVisualRegistrarausencia_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(252, 247, 197);
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnEditar.ForeColor = Color.FromArgb(19, 116, 125);
-            btnEditar.Location = new Point(615, 529);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(94, 29);
-            btnEditar.TabIndex = 17;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
             // 
             // btnVolver
             // 
@@ -112,7 +99,6 @@
             BackColor = Color.FromArgb(19, 116, 125);
             ClientSize = new Size(1079, 664);
             Controls.Add(btnVolver);
-            Controls.Add(btnEditar);
             Controls.Add(btnVisualRegistrarausencia);
             Controls.Add(dgvEmpleadosbasico);
             FormBorderStyle = FormBorderStyle.None;
@@ -129,6 +115,5 @@
         private DataGridView dgvEmpleadosbasico;
         private Button btnVisualRegistrarausencia;
         private Button btnVolver;
-        private Button btnEditar;
     }
 }

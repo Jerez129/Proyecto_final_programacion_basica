@@ -53,6 +53,7 @@
             dgvEditarausencias.GridColor = Color.FromArgb(19, 116, 125);
             dgvEditarausencias.Location = new Point(408, 116);
             dgvEditarausencias.Name = "dgvEditarausencias";
+            dgvEditarausencias.ReadOnly = true;
             dgvEditarausencias.RowHeadersWidth = 51;
             dgvEditarausencias.Size = new Size(796, 327);
             dgvEditarausencias.TabIndex = 0;

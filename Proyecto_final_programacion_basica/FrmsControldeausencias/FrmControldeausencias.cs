@@ -56,5 +56,10 @@ namespace Capa_Presentacion_Proyecto_Final
             this.Close();
 
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

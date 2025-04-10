@@ -202,7 +202,7 @@ namespace Capa_Presentacion_Proyecto_Final
             int diasdelasemana = (int)iniciodemes.DayOfWeek; // Día de la semana en número
 
             // Espacios en blanco para los días antes del primer día del mes
-            for (int i = 0; i < diasdelasemana; i++)
+            for (int i = 2; i < diasdelasemana; i++)
             {
                 ucEspciosparadias ucespaciosparadias = new ucEspciosparadias();
                 flpContenedordedias.Controls.Add(ucespaciosparadias);
@@ -227,6 +227,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void btnReportedeausencias_Click(object sender, EventArgs e)
         {
+            FrmReporteDeAusencias frmReporteDeAusencias = new FrmReporteDeAusencias();
+            frmReporteDeAusencias.Show();
+            this.Hide();
         }
 
         private void btnAcercade_Click(object sender, EventArgs e)

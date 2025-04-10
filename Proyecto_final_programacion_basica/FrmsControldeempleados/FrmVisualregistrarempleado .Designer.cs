@@ -162,6 +162,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(233, 27);
             txtNombre.TabIndex = 11;
+            txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // txtApellido
             // 
@@ -169,6 +170,7 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(233, 27);
             txtApellido.TabIndex = 12;
+            txtApellido.KeyPress += txtApellido_KeyPress;
             // 
             // txtCedula
             // 
@@ -176,6 +178,7 @@
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(233, 27);
             txtCedula.TabIndex = 13;
+            txtCedula.KeyPress += txtCedula_KeyPress;
             // 
             // txtCorreo
             // 
@@ -186,6 +189,7 @@
             // 
             // cbDepartamento
             // 
+            cbDepartamento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDepartamento.FormattingEnabled = true;
             cbDepartamento.Location = new Point(530, 197);
             cbDepartamento.Name = "cbDepartamento";
@@ -194,14 +198,16 @@
             // 
             // cbDireccion
             // 
+            cbDireccion.DropDownStyle = ComboBoxStyle.DropDownList;
             cbDireccion.FormattingEnabled = true;
             cbDireccion.Location = new Point(530, 245);
             cbDireccion.Name = "cbDireccion";
-            cbDireccion.Size = new Size(347, 28);
+            cbDireccion.Size = new Size(504, 28);
             cbDireccion.TabIndex = 18;
             // 
             // cbGenero
             // 
+            cbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGenero.FormattingEnabled = true;
             cbGenero.Location = new Point(530, 293);
             cbGenero.Name = "cbGenero";
@@ -238,6 +244,7 @@
             // 
             // cbCargo
             // 
+            cbCargo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCargo.FormattingEnabled = true;
             cbCargo.Items.AddRange(new object[] { "Gerente de Distribución", "Gerente de Logística", "Supervisor de Distribución", "Supervisor de Almacén", "Auxiliar de Distribución", "Chofer de Distribución", "Técnico de Productividad", "Técnico en Logística", "Coordinador de Seguridad Industrial", "Técnico en Control de Calidad", "Técnico de gente y gestión ", "Gerente de Ventas", "Asesor de ventas" });
             cbCargo.Location = new Point(530, 155);
@@ -273,6 +280,7 @@
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(233, 27);
             txtTelefono.TabIndex = 15;
+            txtTelefono.KeyPress += txtTelefono_KeyPress;
             // 
             // dtpFechanacimiento
             // 
@@ -296,6 +304,7 @@
             txtSalariobase.Name = "txtSalariobase";
             txtSalariobase.Size = new Size(233, 27);
             txtSalariobase.TabIndex = 28;
+            txtSalariobase.KeyPress += txtSalariobase_KeyPress;
             // 
             // lblSalariobase
             // 
@@ -313,7 +322,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(252, 247, 197);
-            ClientSize = new Size(933, 601);
+            ClientSize = new Size(1108, 601);
             Controls.Add(txtSalariobase);
             Controls.Add(lblSalariobase);
             Controls.Add(dtpFechaingreso);
