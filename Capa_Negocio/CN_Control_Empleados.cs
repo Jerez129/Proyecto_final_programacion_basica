@@ -72,9 +72,9 @@ namespace Capa_Negocio
         {
             CN_Empleados.Eliminar(empleado);
         }
-    }
-}
-public override bool Validacion(out string mensaje)
+    
+ 
+        public override bool Validacion(out string mensaje)
         {
             // Validar que la fecha de nacimiento no sea mayor que la fecha de ingreso
             if (FechaNacimiento > FechaIngreso)
