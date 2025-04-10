@@ -13,7 +13,8 @@ namespace Capa_Negocio
 {
     public class CN_Login
     {
-
+        //aqui creamos la logica que se ulilisara para validad el usuario que nos brinda usuariosDal
+        //es decir esta sera como otra capa de acceso que se encargara de validar el usuario 
         public class UsuarioNegocio
         {
             private UsuariosDAL usuariosDAL = new UsuariosDAL();

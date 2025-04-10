@@ -11,50 +11,70 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocio
 {
+    // La clase CN_Control_Empleados se encarga de gestionar las operaciones relacionadas con los empleados.
+    // Esta clase hereda de EmpleadosModel y también implementa la interfaz ICapa_de_Negocio,
+    // lo que le permite realizar operaciones CRUD sobre los empleados.
     public class CN_Control_Empleados : EmpleadosModel, ICapa_de_Negocio<EmpleadosModel>
     {
+        // Instancia de la clase EmpleadosModel, usada para acceder a los métodos de manejo de empleados.
         private EmpleadosModel CN_Empleados = new EmpleadosModel();
 
+        // Instancias de otras clases que gestionan la información relacionada con dirección, género y departamento.
         DireccionModel CN_Direccion = new DireccionModel();
         GeneroModel CN_Genero = new GeneroModel();
         DepartamentoModel CN_Departamento = new DepartamentoModel();
 
+        // Método para mostrar los géneros de los empleados.
+        // Devuelve un DataTable con los géneros disponibles (Masculino, Femenino).
         public DataTable MostrarGenero()
         {
             return CN_Genero.MostrarGenero();
         }
 
+        // Método para mostrar los departamentos de la empresa.
+        // Devuelve un DataTable con los departamentos disponibles.
         public DataTable MostrarDepartamento()
         {
             return CN_Departamento.MostrarDepartamento();
         }
+
+        // Método para mostrar las direcciones de los empleados.
+        // Devuelve un DataTable con las direcciones registradas en el sistema.
         public DataTable MostrarDireccion()
         {
             return CN_Direccion.MostrarDireccion();
         }
 
+        // Método para mostrar la lista completa de empleados.
+        // Retorna un DataTable con todos los empleados registrados en el sistema.
         public DataTable Mostrar()
         {
             return CN_Empleados.Mostrar();
         }
 
+        // Método para insertar un nuevo empleado en la base de datos.
+        // Recibe un objeto de tipo EmpleadosModel y lo inserta en la base de datos.
         public void Insertar(EmpleadosModel empleado)
         {
-        
-            CN_Empleados.Insertar(empleado); 
+            CN_Empleados.Insertar(empleado);
         }
 
+        // Método para editar un empleado existente en la base de datos.
+        // Recibe un objeto de tipo EmpleadosModel y actualiza la información del empleado.
         public void Editar(EmpleadosModel empleado)
         {
             CN_Empleados.Editar(empleado);
         }
 
+        // Método para eliminar un empleado de la base de datos.
+        // Recibe un objeto de tipo EmpleadosModel y elimina el empleado correspondiente.
         public void Eliminar(EmpleadosModel empleado)
         {
             CN_Empleados.Eliminar(empleado);
         }
-
-        public override bool Validacion(out string mensaje)
+    }
+}
+public override bool Validacion(out string mensaje)
         {
             // Validar que la fecha de nacimiento no sea mayor que la fecha de ingreso
             if (FechaNacimiento > FechaIngreso)

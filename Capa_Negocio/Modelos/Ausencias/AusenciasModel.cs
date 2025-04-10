@@ -18,22 +18,28 @@ namespace Capa_Negocio
         DataTable tabla = new DataTable();
 
         
-        public int IdAusencia { get; set; }
+        public int IdAusencia { get; set; }//se declaran las variables que se van a utilizar
         public int IdEmpleado { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public int IdTipoAusencia { get; set; }
         public bool Aprobado { get; set; }
-        public DataTable MostrarTipodeausencia()
-        {
+        public DataTable MostrarTipodeausencia() //se llama el proceso almacenado a utlizar 
+         
+         // con las demas lineas e repite lo mismo tienen su conexion a la base de datos y su respectivo proceso almacenado
+         //proceso almancedos que se encargan de conectarlo a la base datos y verificar la informacion 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "MostrarTipoddeausnecia";
             comando.CommandType = CommandType.StoredProcedure;
+             // Se ejecuta la consulta y se leen los datos
             leer = comando.ExecuteReader();
+               // Se cargan los datos en la tabla para devolverlos
             tabla.Load(leer);
+             // Se cierra la conexión
             conexion.CerrarConexion();
+             // Se retorna la tabla con los resultados
             return tabla;
-        }
+        }//se repite el mismo proceso para los demas metodos
         public DataTable Mostrar()
         {
             comando.Connection = conexion.AbrirConexion();
@@ -104,7 +110,10 @@ namespace Capa_Negocio
 
         public DataTable MostrarAusenciasPorFecha(DateTime fecha)
         {
-             comando.Connection = conexion.AbrirConexion();
+            // Este método recibe una fecha como parámetro
+            // y devuelve una tabla con todas las ausencias que coinciden con esa fecha.
+            // Es decir, busca las ausencias que estén activas ese día.
+            comando.Connection = conexion.AbrirConexion();
              string query = @"
              SELECT 
                 A.id_Ausencia,
@@ -126,15 +135,23 @@ namespace Capa_Negocio
                 INNER JOIN Departamentos D ON E.id_Departamento = D.id_Departamento
                INNER JOIN Tipo_Ausencia TA ON A.id_Tipo_Ausencia = TA.id_Tipo_Ausencia
               WHERE @Fecha BETWEEN A.FechaInicio AND A.FechaFin";
- 
-                comando.CommandText = query;
+            // Se asigna el texto de la consulta al comando
+            comando.CommandText = query;
              comando.CommandType = CommandType.Text;
-             comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@Fecha", fecha.Date); 
-             leer = comando.ExecuteReader();
-             tabla.Load(leer);
-             conexion.CerrarConexion();
-             return tabla;
+            // Se limpian los parámetros anteriores del comando
+            comando.Parameters.Clear();
+            // Se agrega el parámetro de fecha que se usará en la consulta
+            comando.Parameters.AddWithValue("@Fecha", fecha.Date);
+          
+            leer = comando.ExecuteReader();
+           
+            tabla.Load(leer);
+           
+            conexion.CerrarConexion();
+      
+            return tabla;
+           
+           
 
         }
     }

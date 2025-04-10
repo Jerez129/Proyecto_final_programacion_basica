@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Capa_Negocio.Modelos.Empleados
-{
+{//esta clase reprenseta el modelo de genero dentro de la capa de negocio 
     public class GeneroModel : ModeloBase
-    {
+    {//creamos la conexo a la base de datos y le indicamos que es lo que vamos a utilizar en este caso Genero
         private CD_Conexion conexion = new CD_Conexion();
         SqlCommand comando = new SqlCommand();
         SqlDataReader leer;
@@ -19,7 +19,7 @@ namespace Capa_Negocio.Modelos.Empleados
         int Genero { get; set; }
 
         public DataTable MostrarGenero()
-        {
+        {//aqui selecionamos los datos con un comando y no con proceso almacenado , abrimos la cadena de coxnexion y le indicamos que es lo que vamos a utilizar    
             comando.Connection = conexion.AbrirConexion();
             string query = "SELECT id_Genero, Genero FROM Genero"; 
             comando.CommandText = query;

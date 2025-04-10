@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace Capa_Datos.ClasesDAL
 {
    public class UsuariosDAL
-    {
+    {//ojo aqui este es el nombre de la calse quetiene como funcion conectar a la base de datos a Nombre usuario y clave
+        //esta se encargara de verificar si el usuario existe o no 
         private CD_Conexion conexion = new CD_Conexion();
 
         public object ObtenerUsuario(string usuario, string contraseña)

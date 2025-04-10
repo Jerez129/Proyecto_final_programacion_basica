@@ -8,50 +8,75 @@ using System.Data;
 
 namespace Capa_Negocio
 {
-    public class CN_Control_Ausencias : AusenciasModel , ICapa_de_Negocio<AusenciasModel>
+    // La clase CN_Control_Ausencias gestiona las operaciones relacionadas con las ausencias de los empleados.
+    // Hereda de AusenciasModel para acceder a sus funcionalidades y también implementa la interfaz ICapa_de_Negocio,
+    // lo que le permite realizar las operaciones CRUD sobre las ausencias.
+    public class CN_Control_Ausencias : AusenciasModel, ICapa_de_Negocio<AusenciasModel>
     {
+        // Instancia de la clase AusenciasModel, usada para acceder a los métodos de manejo de ausencias.
         AusenciasModel CN_Ausencias = new AusenciasModel();
+
+        // Instancia de la clase EmpleadosModel, usada para acceder a los métodos de manejo de empleados.
         private EmpleadosModel CN_Empleados = new EmpleadosModel();
 
+        // Método para mostrar las ausencias de los empleados filtradas por una fecha específica.
+        // Recibe una fecha y retorna un DataTable con las ausencias de esa fecha.
         public DataTable Mostrarausenciaporfecha(DateTime fecha)
         {
             return CN_Ausencias.MostrarAusenciasPorFecha(fecha);
         }
+
+        // Método para mostrar los tipos de ausencias disponibles. Devuelve un DataTable con los tipos.
         public DataTable MostrarTipodeausencia()
         {
             return CN_Ausencias.MostrarTipodeausencia();
         }
 
+        // Método para mostrar los empleados con una información básica.
+        // Este método se utiliza para obtener una lista de empleados con detalles básicos.
         public DataTable MostrarEmpleadoBasico()
         {
             return CN_Empleados.MostrarEmpleadoBasico();
         }
 
+        // Método para obtener las ausencias que se pueden editar.
+        // Este método devuelve un DataTable con las ausencias que se pueden modificar.
         public DataTable MostrarAusenciasParaEditar()
         {
             return CN_Ausencias.MostrarAusenciasParaEditar();
         }
-        
+
+        // Método para mostrar todas las ausencias registradas.
+        // Retorna un DataTable con todas las ausencias en el sistema.
         public DataTable Mostrar()
         {
             return CN_Ausencias.Mostrar();
         }
 
+        // Método para insertar una nueva ausencia.
+        // Recibe un objeto de tipo AusenciasModel y lo inserta en la base de datos.
         public void Insertar(AusenciasModel ausencia)
         {
             CN_Ausencias.Insertar(ausencia);
         }
 
+        // Método para eliminar una ausencia.
+        // Recibe un objeto de tipo AusenciasModel y elimina la ausencia correspondiente.
         public void Eliminar(AusenciasModel ausencia)
         {
             CN_Ausencias.Eliminar(ausencia);
         }
 
+        // Método para editar una ausencia existente.
+        // Recibe un objeto de tipo AusenciasModel y actualiza la información de la ausencia.
         public void Editar(AusenciasModel ausencia)
         {
             CN_Ausencias.Editar(ausencia);
         }
 
+        // Método de validación, sobrecargado de la clase base.
+        // Este método se utiliza para validar la ausencia antes de realizar operaciones.
+        // Si la validación es exitosa, retorna 'true' y el mensaje es vacío. Si no, retorna 'false' y un mensaje de error.
         public override bool Validacion(out string mensaje)
         {
 
