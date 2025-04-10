@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvReportedeausencias = new DataGridView();
             txtNombre = new TextBox();
             checkBox1 = new CheckBox();
@@ -46,14 +46,14 @@
             dgvReportedeausencias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvReportedeausencias.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvReportedeausencias.BackgroundColor = Color.FromArgb(19, 116, 125);
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(252, 247, 197);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(10, 191, 188);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvReportedeausencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(252, 247, 197);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(10, 191, 188);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvReportedeausencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvReportedeausencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvReportedeausencias.GridColor = Color.FromArgb(19, 116, 125);
             dgvReportedeausencias.Location = new Point(29, 139);
@@ -74,9 +74,10 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(688, 107);
+            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            checkBox1.Location = new Point(661, 99);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(136, 24);
+            checkBox1.Size = new Size(143, 24);
             checkBox1.TabIndex = 4;
             checkBox1.Text = "Filtrar por fecha";
             checkBox1.UseVisualStyleBackColor = true;
@@ -84,18 +85,22 @@
             // 
             // btnExportaraexcel
             // 
-            btnExportaraexcel.Location = new Point(668, 12);
+            btnExportaraexcel.BackColor = Color.FromArgb(19, 116, 125);
+            btnExportaraexcel.FlatStyle = FlatStyle.Flat;
+            btnExportaraexcel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnExportaraexcel.ForeColor = Color.FromArgb(252, 247, 197);
+            btnExportaraexcel.Location = new Point(661, 12);
             btnExportaraexcel.Name = "btnExportaraexcel";
-            btnExportaraexcel.Size = new Size(129, 29);
+            btnExportaraexcel.Size = new Size(136, 29);
             btnExportaraexcel.TabIndex = 7;
-            btnExportaraexcel.Text = "Exportar a excel";
-            btnExportaraexcel.UseVisualStyleBackColor = true;
+            btnExportaraexcel.Text = "Exportar a Excel";
+            btnExportaraexcel.UseVisualStyleBackColor = false;
             btnExportaraexcel.Click += btnExportaraexcel_Click;
             // 
             // dtpFechaInicio
             // 
             dtpFechaInicio.Format = DateTimePickerFormat.Short;
-            dtpFechaInicio.Location = new Point(544, 70);
+            dtpFechaInicio.Location = new Point(528, 62);
             dtpFechaInicio.Name = "dtpFechaInicio";
             dtpFechaInicio.Size = new Size(127, 27);
             dtpFechaInicio.TabIndex = 8;
@@ -104,7 +109,7 @@
             // dtpFechafin
             // 
             dtpFechafin.Format = DateTimePickerFormat.Short;
-            dtpFechafin.Location = new Point(544, 103);
+            dtpFechafin.Location = new Point(528, 95);
             dtpFechafin.Name = "dtpFechafin";
             dtpFechafin.Size = new Size(127, 27);
             dtpFechafin.TabIndex = 9;
@@ -113,7 +118,7 @@
             // cbTipodeausencias
             // 
             cbTipodeausencias.FormattingEnabled = true;
-            cbTipodeausencias.Location = new Point(287, 94);
+            cbTipodeausencias.Location = new Point(276, 94);
             cbTipodeausencias.Name = "cbTipodeausencias";
             cbTipodeausencias.Size = new Size(151, 28);
             cbTipodeausencias.TabIndex = 10;
@@ -121,12 +126,16 @@
             // 
             // btnLimpiarcampos
             // 
-            btnLimpiarcampos.Location = new Point(444, 79);
+            btnLimpiarcampos.BackColor = Color.FromArgb(19, 116, 125);
+            btnLimpiarcampos.FlatStyle = FlatStyle.Flat;
+            btnLimpiarcampos.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnLimpiarcampos.ForeColor = Color.FromArgb(252, 247, 197);
+            btnLimpiarcampos.Location = new Point(433, 71);
             btnLimpiarcampos.Name = "btnLimpiarcampos";
             btnLimpiarcampos.Size = new Size(94, 51);
             btnLimpiarcampos.TabIndex = 11;
             btnLimpiarcampos.Text = "Limpiar campos";
-            btnLimpiarcampos.UseVisualStyleBackColor = true;
+            btnLimpiarcampos.UseVisualStyleBackColor = false;
             btnLimpiarcampos.Click += btnLimpiarcampos_Click;
             // 
             // btnVolveralmenuprincipal

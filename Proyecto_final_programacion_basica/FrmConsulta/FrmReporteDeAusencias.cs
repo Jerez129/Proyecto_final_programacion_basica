@@ -35,7 +35,7 @@ namespace Capa_Presentacion.FrmConsulta
 
         private void FrmReporteDeAusencias_Load(object sender, EventArgs e)
         {
-
+            SetPlaceholder(txtNombre, "Buscar Empleado por Nombre");
             cbTipodeausencias.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
         }
 
@@ -103,7 +103,33 @@ namespace Capa_Presentacion.FrmConsulta
         {
             FiltrarDatos();
         }
+        // Eliminar el marcador de posición cuando el usuario empieza a escribir
+        private void RemovePlaceholder(TextBox textBox, string placeholder)
+        {
+            if (textBox.Text == placeholder)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black; // Color del texto normal
+            }
+        }
 
+        // Agregar el marcador de posición si el campo está vacío
+        private void AddPlaceholder(TextBox textBox, string placeholder)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = placeholder;
+                textBox.ForeColor = Color.Gray; // Color del texto del marcador de posición
+            }
+        }
+
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = Color.Gray; // Color del texto del marcador de posición
+            textBox.GotFocus += (sender, e) => RemovePlaceholder(sender as TextBox, placeholder);
+            textBox.LostFocus += (sender, e) => AddPlaceholder(sender as TextBox, placeholder);
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

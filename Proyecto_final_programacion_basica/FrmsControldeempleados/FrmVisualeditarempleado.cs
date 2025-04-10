@@ -51,6 +51,13 @@ namespace Capa_Presentacion.FrmsControldeempleados
         }
         private void FrmVisualeditarempleado_Load(object sender, EventArgs e)
         {
+            txtNombreeditar.Enabled = false;
+            txtApellidoeditar.Enabled = false;
+            txtCedulaeditar.Enabled = false;
+            txtCorreoeditar.Enabled = false;
+            txtTelefonoeditar.Enabled = false;
+            txtSalariobaseeditar.Enabled = false;
+
             CN_Control_Empleados empleado = new CN_Control_Empleados();
             cbDireccioneditar.DataSource = empleado.MostrarDireccion();
             cbDireccioneditar.DisplayMember = "Direccion"; // Nombre de la columna que se mostrará
@@ -66,6 +73,7 @@ namespace Capa_Presentacion.FrmsControldeempleados
             cbDepartamentoeditar.DisplayMember = "NombreDepartamento"; // Nombre de la columna que se mostrará
             cbDepartamentoeditar.ValueMember = "id_Departamento"; // Nombre de la columna que se usará como valor
             cbDepartamentoeditar.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
+
         }
 
 
@@ -120,7 +128,7 @@ namespace Capa_Presentacion.FrmsControldeempleados
                 MessageBox.Show("Por favor, seleccione un empleado para editar.");
                 return;
             }
-          
+
         }
 
 
@@ -227,7 +235,5 @@ namespace Capa_Presentacion.FrmsControldeempleados
             }
 
         }
-
-
     }
 }

@@ -62,6 +62,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(144, 27);
             txtUsuario.TabIndex = 3;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtClave
             // 
@@ -82,7 +83,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Image = Capa_Presentacion.Properties.Resources.hide;
             pictureBox2.Location = new Point(462, 292);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 27);

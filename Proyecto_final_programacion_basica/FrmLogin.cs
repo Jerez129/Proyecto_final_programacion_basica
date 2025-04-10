@@ -77,53 +77,58 @@ namespace Capa_Presentacion_Proyecto_Final
             txtClave.UseSystemPasswordChar = true;
 
             // Cargar imagen de ojito cerrado
-        //    pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide);
+            pictureBox2.Image = Capa_Presentacion.Properties.Resources.hide;
 
             // Asegúrate de que el estado esté sincronizado
             passwordVisible = false;
         }
 
 
-       private bool passwordVisible = true;
+        private bool passwordVisible = true;
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (passwordVisible)
             {
                 // Muestra la contraseña
                 txtClave.UseSystemPasswordChar = false;
-              //  pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.show);
-                passwordVisible = false; // <- estaba mal antes
+                pictureBox2.Image = Capa_Presentacion.Properties.Resources.show;
             }
             else
             {
                 // Oculta la contraseña
                 txtClave.UseSystemPasswordChar = true;
-              //  pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide);
-                passwordVisible = true; // <- estaba mal antes
+                pictureBox2.Image = Capa_Presentacion.Properties.Resources.hide;
+            }
+            passwordVisible = !passwordVisible;
+        }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (var ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
             }
         }
 
-       /* private Image ByteArrayToImage(byte[] byteArray)
-        {
-           using (var ms = new MemoryStream(byteArray))
-            {
-                return Image.FromStream(ms);
-            
-        }*/
         //Aqui precargo el ojito para que se pueda utilizar desde que se compila el formulario
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Oculta la contraseña por defecto
+            /// Oculta la contraseña por defecto
             txtClave.UseSystemPasswordChar = true;
 
             // Carga el ojito cerrado como imagen inicial
-           // pictureBox2.Image = ByteArrayToImage(Capa_Presentacion.Properties.Resources.hide);
+            pictureBox2.Image = Capa_Presentacion.Properties.Resources.show;
 
             // Inicializa el estado
             passwordVisible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }

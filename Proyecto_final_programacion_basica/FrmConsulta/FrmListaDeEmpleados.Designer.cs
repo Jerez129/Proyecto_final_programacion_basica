@@ -87,7 +87,7 @@
             // dtpFechaMaxima
             // 
             dtpFechaMaxima.Format = DateTimePickerFormat.Short;
-            dtpFechaMaxima.Location = new Point(1383, 53);
+            dtpFechaMaxima.Location = new Point(1372, 53);
             dtpFechaMaxima.Name = "dtpFechaMaxima";
             dtpFechaMaxima.Size = new Size(106, 27);
             dtpFechaMaxima.TabIndex = 7;
@@ -96,11 +96,13 @@
             // chkFiltrarFecha
             // 
             chkFiltrarFecha.AutoSize = true;
-            chkFiltrarFecha.Location = new Point(1505, 56);
+            chkFiltrarFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            chkFiltrarFecha.ForeColor = Color.FromArgb(19, 116, 125);
+            chkFiltrarFecha.Location = new Point(1494, 56);
             chkFiltrarFecha.Name = "chkFiltrarFecha";
-            chkFiltrarFecha.Size = new Size(210, 24);
+            chkFiltrarFecha.Size = new Size(221, 24);
             chkFiltrarFecha.TabIndex = 8;
-            chkFiltrarFecha.Text = "Filtrar por fecha de ingreso";
+            chkFiltrarFecha.Text = "Filtrar por fecha de Ingreso";
             chkFiltrarFecha.UseVisualStyleBackColor = true;
             chkFiltrarFecha.CheckedChanged += chkFiltrarFecha_CheckedChanged;
             // 
@@ -125,7 +127,7 @@
             // dtpFechaMinima
             // 
             dtpFechaMinima.Format = DateTimePickerFormat.Short;
-            dtpFechaMinima.Location = new Point(1383, 20);
+            dtpFechaMinima.Location = new Point(1372, 20);
             dtpFechaMinima.Name = "dtpFechaMinima";
             dtpFechaMinima.Size = new Size(106, 27);
             dtpFechaMinima.TabIndex = 13;
@@ -133,22 +135,29 @@
             // 
             // btnEliminarfiltros
             // 
+            btnEliminarfiltros.BackColor = Color.FromArgb(19, 116, 125);
+            btnEliminarfiltros.FlatStyle = FlatStyle.Flat;
+            btnEliminarfiltros.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnEliminarfiltros.ForeColor = Color.FromArgb(252, 247, 197);
             btnEliminarfiltros.Location = new Point(990, 53);
             btnEliminarfiltros.Name = "btnEliminarfiltros";
             btnEliminarfiltros.Size = new Size(124, 29);
             btnEliminarfiltros.TabIndex = 14;
-            btnEliminarfiltros.Text = "Eliminar filtros";
-            btnEliminarfiltros.UseVisualStyleBackColor = true;
+            btnEliminarfiltros.Text = "Eliminar Filtros";
+            btnEliminarfiltros.UseVisualStyleBackColor = false;
             btnEliminarfiltros.Click += btnEliminarfiltros_Click;
             // 
             // btnExportarexcel
             // 
-            btnExportarexcel.Location = new Point(1173, 53);
+            btnExportarexcel.BackColor = Color.FromArgb(19, 116, 125);
+            btnExportarexcel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnExportarexcel.ForeColor = Color.FromArgb(252, 247, 197);
+            btnExportarexcel.Location = new Point(1166, 53);
             btnExportarexcel.Name = "btnExportarexcel";
-            btnExportarexcel.Size = new Size(124, 29);
+            btnExportarexcel.Size = new Size(131, 29);
             btnExportarexcel.TabIndex = 15;
-            btnExportarexcel.Text = "Exportar a excel";
-            btnExportarexcel.UseVisualStyleBackColor = true;
+            btnExportarexcel.Text = "Exportar a Excel";
+            btnExportarexcel.UseVisualStyleBackColor = false;
             btnExportarexcel.Click += btnExportarexcel_Click;
             // 
             // FrmListaDeEmpleados

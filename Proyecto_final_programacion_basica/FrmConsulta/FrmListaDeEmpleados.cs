@@ -43,7 +43,9 @@ namespace Capa_Presentacion.FrmConsulta
             chkFiltrarFecha.Checked = false;
         }
         private void FrmListaDeEmpleados_Load(object sender, EventArgs e)
+
         {
+            SetPlaceholder(txtBuscarEmpleado, "Buscar Empleado por Nombre");
             CN_Control_Empleados empleado = new CN_Control_Empleados();
 
             cbGenero.DataSource = empleado.MostrarGenero();
@@ -55,6 +57,32 @@ namespace Capa_Presentacion.FrmConsulta
             cbDepartamento.DisplayMember = "NombreDepartamento"; // Nombre de la columna que se mostrará
             cbDepartamento.ValueMember = "id_Departamento"; // Nombre de la columna que se usará como valor
             cbDepartamento.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
+        }
+        private void RemovePlaceholder(TextBox textBox, string placeholder)
+        {
+            if (textBox.Text == placeholder)
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.Black; // Color del texto normal
+            }
+        }
+
+        // Agregar el marcador de posición si el campo está vacío
+        private void AddPlaceholder(TextBox textBox, string placeholder)
+        {
+            if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = placeholder;
+                textBox.ForeColor = Color.Gray; // Color del texto del marcador de posición
+            }
+        }
+
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = Color.Gray; // Color del texto del marcador de posición
+            textBox.GotFocus += (sender, e) => RemovePlaceholder(sender as TextBox, placeholder);
+            textBox.LostFocus += (sender, e) => AddPlaceholder(sender as TextBox, placeholder);
         }
 
         private void FiltrarEmpleados()

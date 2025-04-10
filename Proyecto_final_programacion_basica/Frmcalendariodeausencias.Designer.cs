@@ -94,7 +94,7 @@
             ClientSize = new Size(1089, 450);
             Controls.Add(btnCerrarreportedecalendario);
             Controls.Add(dgvAusenciascalendario);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Frmcalendariodeausencias";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Frmcalendariodeausencias";
