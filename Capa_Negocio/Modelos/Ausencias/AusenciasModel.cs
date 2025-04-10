@@ -25,7 +25,8 @@ namespace Capa_Negocio
         public int IdTipoAusencia { get; set; }
         public bool Aprobado { get; set; }
         public DataTable MostrarTipodeausencia()
-        { //se llama el proceso almacenado a utlizar 
+        {
+            //se llama el proceso almacenado a utlizar 
          
          // con las demas lineas e repite lo mismo tienen su conexion a la base de datos y su respectivo proceso almacenado
          //proceso almancedos que se encargan de conectarlo a la base datos y verificar la informacion 
