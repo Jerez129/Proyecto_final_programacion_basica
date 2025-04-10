@@ -21,17 +21,22 @@ namespace Capa_Presentacion.FrmConsulta
             MostrarReporte();
             CargarTiposAusencias();
         }
+        /// <summary>
+        /// Método para cargar los tipos de ausencias en el ComboBox.
+        /// </summary>
         private DataTable tablaAusencias;
-
         private void CargarTiposAusencias()
         {
-            CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
+            CN_Reporte_Ausencias ausencias = new CN_Reporte_Ausencias();
             DataTable dt = ausencias.MostrarTipodeausencia();
 
             cbTipodeausencias.DataSource = dt;
             cbTipodeausencias.DisplayMember = "Tipo";  // La columna visible
             cbTipodeausencias.ValueMember = "id_Tipo_Ausencia";  // El valor interno
         }
+        /// <summary>
+        /// Evento que se ejecuta cuando el formulario se carga. Configura los controles iniciales.
+        /// </summary>
 
         private void FrmReporteDeAusencias_Load(object sender, EventArgs e)
         {
@@ -39,6 +44,10 @@ namespace Capa_Presentacion.FrmConsulta
             cbTipodeausencias.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
         }
 
+
+        /// <summary>
+        /// Método para limpiar los campos de búsqueda y filtros.
+        /// </summary>
         private void limpiarcampos()
         {
             txtNombre.Clear();
@@ -47,17 +56,21 @@ namespace Capa_Presentacion.FrmConsulta
             dtpFechafin.Value = DateTime.Now;
             checkBox1.Checked = false; // Desmarcar el checkbox
         }
-
+        /// <summary>
+        /// Método para mostrar el reporte de ausencias en el DataGridView.
+        /// </summary>
         private void MostrarReporte()
         {
-            CN_Control_Ausencias reporte = new CN_Control_Ausencias();
-            tablaAusencias = reporte.Mostrar();
+            CN_Reporte_Ausencias ausencias = new CN_Reporte_Ausencias();
+            tablaAusencias = ausencias.Mostrar();
             dgvReportedeausencias.DataSource = tablaAusencias;
             dgvReportedeausencias.Columns["id_Empleado"].Visible = false;
             dgvReportedeausencias.Columns["id_Ausencia"].Visible = false;
         }
 
-        // Filtrar según los criterios seleccionados
+        /// <summary>
+        /// Método para filtrar los datos según los criterios seleccionados.
+        /// </summary>
         private void FiltrarDatos()
         {
             if (tablaAusencias == null) return;
@@ -99,10 +112,7 @@ namespace Capa_Presentacion.FrmConsulta
 
             dgvReportedeausencias.DataSource = vista;
         }
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            FiltrarDatos();
-        }
+  
         // Eliminar el marcador de posición cuando el usuario empieza a escribir
         private void RemovePlaceholder(TextBox textBox, string placeholder)
         {
@@ -130,13 +140,18 @@ namespace Capa_Presentacion.FrmConsulta
             textBox.GotFocus += (sender, e) => RemovePlaceholder(sender as TextBox, placeholder);
             textBox.LostFocus += (sender, e) => AddPlaceholder(sender as TextBox, placeholder);
         }
-
+        /// <summary>
+        /// Métodos que se ejecutan cuando se insertan datos a los txt,dtp,cb. 
+        /// Estos eventos activan el filtrado de los datos.
+        /// </summary>
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarDatos();
+        }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             FiltrarDatos();
         }
-
-
         private void cbTipodeausencias_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltrarDatos();
@@ -153,6 +168,10 @@ namespace Capa_Presentacion.FrmConsulta
             FiltrarDatos();
         }
 
+        /// <summary>
+        /// Método para exportar los datos filtrados a un archivo Excel.
+        /// Utiliza la biblioteca ClosedXML para crear el archivo Excel.
+        /// </summary>
         private void btnExportaraexcel_Click(object sender, EventArgs e)
         {
             // Crear un nuevo archivo de Excel
@@ -193,11 +212,17 @@ namespace Capa_Presentacion.FrmConsulta
 
         }
 
+        /// <summary>
+        /// Método para limpiar los campos de búsqueda y filtros al hacer clic en el botón Limpiar.
+        /// </summary>
         private void btnLimpiarcampos_Click(object sender, EventArgs e)
         {
             limpiarcampos();
         }
 
+        /// <summary>
+        /// Método para volver al menú principal.
+        /// </summary>
         private void btnVolveralmenuprincipal_Click(object sender, EventArgs e)
         {
             FrmPrincipal frmPrincipal = new FrmPrincipal();

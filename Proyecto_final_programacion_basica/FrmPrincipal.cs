@@ -111,27 +111,28 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void MostrarDias()
         {
+            // Obtiene la fecha actual (mes y año)
             DateTime now = DateTime.Now;
-            mes = now.Month;
-            año = now.Year;
+            mes = now.Month; // Asigna el mes actual
+            año = now.Year; // Asigna el año actual
             string Mesnombre = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblMesAño.Text = Mesnombre + " " + año;
 
             // Toma el primer día del mes
             DateTime iniciodemes = new DateTime(año, mes, 1);
 
-            // Cuenta los días en el mes
+            // Cuenta los días del mes y el día de la semana del primer día
             int dias = DateTime.DaysInMonth(año, mes);
             int diasdelasemana = (int)iniciodemes.DayOfWeek; // Día de la semana en número
 
-            // Espacios en blanco para los días antes del primer día del mes
+            // Crea espacios en blanco para los días antes del primer día del mes
             for (int i = 0; i < diasdelasemana; i++)
             {
                 ucEspciosparadias ucespaciosparadias = new ucEspciosparadias();
                 flpContenedordedias.Controls.Add(ucespaciosparadias);
             }
 
-            // Días del mes con su fecha correcta
+            // Crea y agrega los días del mes con la fecha correcta
             for (int i = 1; i <= dias; i++)
             {
                 ucDias ucdias = new ucDias();
@@ -143,17 +144,17 @@ namespace Capa_Presentacion_Proyecto_Final
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             flpContenedordedias.Controls.Clear();
-            //sumar un mes
+            // Aumenta el mes en 1
             mes++;
             if (mes > 12)
             {
                 mes = 1;
                 año++;
             }
-            //Sumar un mes y año a label
+            // Actualiza el label con el nuevo mes y año
             string Mesnombre = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblMesAño.Text = Mesnombre + " " + año;
-
+            // Muestra el nuevo mes con sus días
             DateTime now = DateTime.Now;
             // Toma el primer día del mes
             DateTime iniciodemes = new DateTime(año, mes, 1);
@@ -182,14 +183,14 @@ namespace Capa_Presentacion_Proyecto_Final
         {
 
             flpContenedordedias.Controls.Clear();
-            //Resta un mes
+            // Resta 1 al mes
             mes--;
             if (mes < 1)
             {
                 mes = 12;
                 año--;
             }
-            //Resta un mes y año a label
+            // Actualiza el label con el nuevo mes y año
             string Mesnombre = DateTimeFormatInfo.CurrentInfo.GetMonthName(mes);
             lblMesAño.Text = Mesnombre + " " + año;
             DateTime now = DateTime.Now;
@@ -197,7 +198,7 @@ namespace Capa_Presentacion_Proyecto_Final
             // Toma el primer día del mes
             DateTime iniciodemes = new DateTime(año, mes, 1);
 
-            // Cuenta los días en el mes
+            // Muestra el mes anterior con sus días
             int dias = DateTime.DaysInMonth(año, mes);
             int diasdelasemana = (int)iniciodemes.DayOfWeek; // Día de la semana en número
 
@@ -234,7 +235,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
         private void btnAcercade_Click(object sender, EventArgs e)
         {
-
+            FrmAcercade frmAcercade = new FrmAcercade();
+            frmAcercade.Show();
+            this.Hide();
         }
 
         private void btnCerrarsesion_Click(object sender, EventArgs e)

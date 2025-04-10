@@ -30,17 +30,10 @@ namespace Capa_Presentacion
 
         }
 
-        /* private void CargarAusencias()
-          {
-
-              CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
-              DataTable dt = ausencias.Mostrar();
-              dgvAusenciascalendario.DataSource = dt;
-          }*/
 
         private void CargarAusencias()
         {
-            CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
+            CN_Principal ausencias = new CN_Principal();
             DataTable dt = ausencias.Mostrarausenciaporfecha(fechaSeleccionada);
 
             if (dt.Rows.Count == 0)

@@ -30,7 +30,9 @@ namespace Capa_Presentacion.FrmsControldeasencias
             CargarAprobacion();
         }
 
-
+        /// <summary>
+        /// Carga los tipos de ausencia en el ComboBox.
+        /// </summary>
         private void CargarTiposAusencias()
         {
             CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
@@ -41,6 +43,9 @@ namespace Capa_Presentacion.FrmsControldeasencias
             cbTipodeausencia.ValueMember = "id_Tipo_Ausencia";  // El valor interno
         }
 
+        /// <summary>
+        /// Carga las opciones de aprobación ("Aprobado" y "No Aprobado") en el ComboBox.
+        /// </summary>
         private void CargarAprobacion()
         {
             // Crear la lista de valores gráficos con los valores booleanos
@@ -57,6 +62,9 @@ namespace Capa_Presentacion.FrmsControldeasencias
             cbAprobacionausencia.SelectedIndex = 0;  // Establecer por defecto "Aprobado"
         }
 
+        /// <summary>
+        /// Limpia los campos del formulario.
+        /// </summary>
         private void Limpiarcampos()
         {
             txtIdEmpleado.Clear();
@@ -81,6 +89,9 @@ namespace Capa_Presentacion.FrmsControldeasencias
 
         }
 
+        /// <summary>
+        /// Registra la ausencia del empleado.
+        /// </summary>
         private void btnRegistrarausencia_Click(object sender, EventArgs e)
         {
             CN_Control_Ausencias ausencia = new CN_Control_Ausencias();
@@ -100,14 +111,18 @@ namespace Capa_Presentacion.FrmsControldeasencias
                 ausencia.Insertar(ausencia);
                 MessageBox.Show("Ausencia registrada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close(); // Cerrar el formulario después de registrar la ausencia
+                Limpiarcampos();
             }
             else
             {
                 // Si la validación falla, mostrar el mensaje de error específico
                 MessageBox.Show(mensajeError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
-
+        /// <summary>
+        /// Vuelve al menú principal de ausencias.
+        /// </summary>
         private void btnVolveralmenuprincipal_Click(object sender, EventArgs e)
         {
             this.Close();

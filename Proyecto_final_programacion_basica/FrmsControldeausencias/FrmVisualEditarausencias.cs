@@ -22,6 +22,9 @@ namespace Capa_Presentacion.FrmsControldeausencias
             CargarTiposAusencias();
             CargarAprobacion();
         }
+        /// <summary>
+        /// Carga los tipos de ausencia en el ComboBox.
+        /// </summary>
         private void CargarTiposAusencias()
         {
             CN_Control_Ausencias ausencias = new CN_Control_Ausencias();
@@ -31,6 +34,9 @@ namespace Capa_Presentacion.FrmsControldeausencias
             cbTipodeausencia.DisplayMember = "Tipo";  // La columna visible
             cbTipodeausencia.ValueMember = "id_Tipo_Ausencia";  // El valor interno
         }
+        /// <summary>
+        /// Limpia los campos del formulario de edición.
+        /// </summary>
         private void LimpiarCampos()
         {
             txtIdEmpleadoEditar.Clear();
@@ -40,6 +46,9 @@ namespace Capa_Presentacion.FrmsControldeausencias
             cbTipodeausencia.SelectedIndex = -1;
             cbAprobacionEditar.SelectedIndex = -1;
         }
+        /// <summary>
+        /// Carga las opciones de aprobación en el ComboBox.
+        /// </summary>
         private void CargarAprobacion()
         {
             // Crear la lista de valores gráficos con los valores booleanos
@@ -57,6 +66,9 @@ namespace Capa_Presentacion.FrmsControldeausencias
         }
 
 
+        /// <summary>
+        /// Muestra las ausencias que pueden ser editadas.
+        /// </summary>
         private void MostrarAusenciasDeEmpleados()
         {
             CN_Control_Ausencias CN_Ausencias = new CN_Control_Ausencias();
@@ -71,6 +83,9 @@ namespace Capa_Presentacion.FrmsControldeausencias
 
         }
 
+        /// <summary>
+        /// Carga los detalles de la ausencia seleccionada para su edición.
+        /// </summary>
         private void dgvEditarausencias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
              if (e.RowIndex >= 0) // Aseguramos que se haya hecho clic en una fila válida
@@ -95,7 +110,9 @@ namespace Capa_Presentacion.FrmsControldeausencias
           
 
         }
-
+        /// <summary>
+        /// Registra las ediciones realizadas a la ausencia.
+        /// </summary>
         private void btnRegistrarausencia_Click(object sender, EventArgs e)
         {
             if (dgvEditarausencias.SelectedRows.Count > 0)
@@ -135,6 +152,9 @@ namespace Capa_Presentacion.FrmsControldeausencias
 
         }
 
+        /// <summary>
+        /// Elimina la ausencia seleccionada.
+        /// </summary>
         private void btnEliminarasuenciaeditar_Click(object sender, EventArgs e)
         {
             // Verificar si se ha seleccionado alguna fila en el DataGridView
@@ -161,6 +181,10 @@ namespace Capa_Presentacion.FrmsControldeausencias
             }
         }
 
+
+        /// <summary>
+        /// Cierra el formulario y regresa al menú principal.
+        /// </summary>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             FrmEntradaausencias frmEntradaausencias = new FrmEntradaausencias();

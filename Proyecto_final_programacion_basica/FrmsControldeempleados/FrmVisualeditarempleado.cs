@@ -19,7 +19,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
             InitializeComponent();
             Mostrarempleadodetallado();
         }
-
+        /// <summary>
+        /// Carga y muestra todos los empleados en el DataGridView, ocultando columnas técnicas.
+        /// </summary>
         private void Mostrarempleadodetallado()
         {
             CN_Control_Empleados empleado = new CN_Control_Empleados();
@@ -29,6 +31,10 @@ namespace Capa_Presentacion.FrmsControldeempleados
             dgvEmpleadosEditar.Columns["id_Direccion"].Visible = false;
             dgvEmpleadosEditar.Columns["id_Genero"].Visible = false;
         }
+
+        /// <summary>
+        /// Limpia todos los campos del formulario.
+        /// </summary>
         private void Limpiarcampos()
         {
 
@@ -49,15 +55,11 @@ namespace Capa_Presentacion.FrmsControldeempleados
 
 
         }
+        /// <summary>
+        /// Evento que se ejecuta al cargar el formulario. Deshabilita campos y llena los ComboBox.
+        /// </summary>
         private void FrmVisualeditarempleado_Load(object sender, EventArgs e)
         {
-            txtNombreeditar.Enabled = false;
-            txtApellidoeditar.Enabled = false;
-            txtCedulaeditar.Enabled = false;
-            txtCorreoeditar.Enabled = false;
-            txtTelefonoeditar.Enabled = false;
-            txtSalariobaseeditar.Enabled = false;
-
             CN_Control_Empleados empleado = new CN_Control_Empleados();
             cbDireccioneditar.DataSource = empleado.MostrarDireccion();
             cbDireccioneditar.DisplayMember = "Direccion"; // Nombre de la columna que se mostrará
@@ -77,7 +79,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
         }
 
 
-
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón de editar. Valida y actualiza el empleado.
+        /// </summary>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvEmpleadosEditar.SelectedRows.Count > 0)
@@ -132,7 +136,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
         }
 
 
-
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en una celda. Llena los campos con los datos seleccionados.
+        /// </summary>
         private void dgvEmpleadosEditar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Verifica que no haya clic en la casilla de selección de fila (RowIndex == -1)
@@ -158,6 +164,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
             }
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón eliminar. Borra el empleado seleccionado.
+        /// </summary>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             // Verificar si se ha seleccionado alguna fila en el DataGridView
@@ -181,7 +190,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
             }
 
         }
-
+        /// <summary>
+        /// Cierra este formulario y abre el formulario principal de control de empleados.
+        /// </summary>
         private void btnCerrarvisualeditarempleado_Click(object sender, EventArgs e)
         {
             FrmVisualcontroldeempleados frm = new FrmVisualcontroldeempleados();
@@ -189,6 +200,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
             frm.Show();
         }
 
+        /// <summary>
+        /// Permite solo letras en el campo de nombre.
+        /// </summary>
         private void txtNombreeditar_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo letras y retroceso, impedir números y símbolos
@@ -199,6 +213,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
 
         }
 
+        /// <summary>
+        /// Permite solo letras en el campo de nombre.
+        /// </summary>
         private void txtApellidoeditar_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo letras y retroceso, impedir números y símbolos
@@ -207,7 +224,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
                 e.Handled = true; // Bloquear el carácter
             }
         }
-
+        /// <summary>
+        /// Permite solo números en el campo de cédula.
+        /// </summary>
         private void txtCedulaeditar_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo numeros y retroceso, impedir letras
@@ -216,7 +235,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
                 e.Handled = true; // Bloquear el carácter
             }
         }
-
+        /// <summary>
+        /// Permite solo números en el campo de Telefono.
+        /// </summary>
         private void txtTelefonoeditar_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo numeros y retroceso, impedir letras
@@ -225,7 +246,9 @@ namespace Capa_Presentacion.FrmsControldeempleados
                 e.Handled = true; // Bloquear el carácter
             }
         }
-
+        /// <summary>
+        /// Permite solo números en el campo de salario
+        /// </summary>
         private void txtSalariobaseeditar_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo numeros y retroceso, impedir letras

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvReportedeausencias = new DataGridView();
             txtNombre = new TextBox();
             checkBox1 = new CheckBox();
@@ -46,14 +46,14 @@
             dgvReportedeausencias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvReportedeausencias.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvReportedeausencias.BackgroundColor = Color.FromArgb(19, 116, 125);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(252, 247, 197);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(10, 191, 188);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(41, 34, 31);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvReportedeausencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(252, 247, 197);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(10, 191, 188);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(41, 34, 31);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvReportedeausencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvReportedeausencias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvReportedeausencias.GridColor = Color.FromArgb(19, 116, 125);
             dgvReportedeausencias.Location = new Point(29, 139);
@@ -117,6 +117,7 @@
             // 
             // cbTipodeausencias
             // 
+            cbTipodeausencias.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipodeausencias.FormattingEnabled = true;
             cbTipodeausencias.Location = new Point(276, 94);
             cbTipodeausencias.Name = "cbTipodeausencias";

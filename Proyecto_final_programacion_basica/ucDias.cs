@@ -31,12 +31,14 @@ namespace Capa_Presentacion
             lblDias.Text = numeroDeDia.ToString();
 
             // Asignamos correctamente la fecha completa
-            fecha = new DateTime(fechaMesAño.Year, fechaMesAño.Month, numeroDeDia);
+            fecha = new DateTime(fechaMesAño.Year, fechaMesAño.Month, numeroDeDia); // Muestra el número del día en el control
         }
 
+        // Método que se ejecuta cuando se hace clic en el control del día
         private void ucDias_Click(object sender, EventArgs e)
         {
             this.BackColor = ColorTranslator.FromHtml("#13747D");
+            // Abre un formulario con la fecha seleccionada
             Frmcalendariodeausencias frmcalendariodeausencias = new Frmcalendariodeausencias(fecha);
             frmcalendariodeausencias.ShowDialog();
 

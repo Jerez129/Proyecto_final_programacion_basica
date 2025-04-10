@@ -19,6 +19,9 @@ namespace Capa_Presentacion_Proyecto_Final
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Limpia todos los campos del formulario.
+        /// </summary>
         private void Limpiarcampos()
         {
             txtNombre.Clear();
@@ -35,6 +38,10 @@ namespace Capa_Presentacion_Proyecto_Final
             cbDepartamento.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón de registrar usuario.
+        /// Valida los datos, inserta el nuevo empleado y muestra mensajes según el resultado.
+        /// </summary>
         private void btnRegistrarusuario_Click(object sender, EventArgs e)
         {
             CN_Control_Empleados empleado = new CN_Control_Empleados();
@@ -47,7 +54,6 @@ namespace Capa_Presentacion_Proyecto_Final
             empleado.FechaNacimiento = dtpFechanacimiento.Value;
             empleado.FechaIngreso = dtpFechaingreso.Value;
             // Validación para el salario base
-            // Validación para el salario base
             if (string.IsNullOrWhiteSpace(txtSalariobase.Text) || !decimal.TryParse(txtSalariobase.Text, out decimal salario))
             {
                 MessageBox.Show("El salario base debe ser un número válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -59,6 +65,7 @@ namespace Capa_Presentacion_Proyecto_Final
             empleado.IdDepartamento = Convert.ToInt32(cbDepartamento.SelectedValue);
             empleado.IdGenero = Convert.ToInt32(cbGenero.SelectedValue);
 
+            // Validación de los datos del objeto empleado
             string mensajeError;
             if (empleado.Validacion(out mensajeError))  // Llamamos a Validacion con out
             {
@@ -76,6 +83,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al cargar el formulario. Llena los combobox con datos desde la base de datos.
+        /// </summary>
         private void FrmVisualregistrarempleado_Load(object sender, EventArgs e)
         {
             CN_Control_Empleados empleado = new CN_Control_Empleados();
@@ -97,6 +107,9 @@ namespace Capa_Presentacion_Proyecto_Final
 
         }
 
+        /// <summary>
+        /// Cierra el formulario actual y muestra el formulario de control de empleados.
+        /// </summary>
         private void btnCerrarvisualregistraremplead_Click(object sender, EventArgs e)
         {
             FrmVisualcontroldeempleados frm = new FrmVisualcontroldeempleados();
@@ -105,7 +118,9 @@ namespace Capa_Presentacion_Proyecto_Final
         }
 
 
-
+        /// <summary>
+        /// Solo permite ingresar letras en el campo de nombre.
+        /// </summary>
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo letras y retroceso, impedir números y símbolos
@@ -115,6 +130,9 @@ namespace Capa_Presentacion_Proyecto_Final
             }
         }
 
+        /// <summary>
+        /// Solo permite ingresar letras en el campo de apellido.
+        /// </summary>
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo letras y retroceso, impedir números y símbolos
@@ -124,6 +142,9 @@ namespace Capa_Presentacion_Proyecto_Final
             }
         }
 
+        /// <summary>
+        /// Solo permite ingresar números en el campo de cédula.
+        /// </summary>
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo números y retroceso
@@ -133,6 +154,9 @@ namespace Capa_Presentacion_Proyecto_Final
             }
         }
 
+        /// <summary>
+        /// Solo permite ingresar números en el campo de teléfono.
+        /// </summary>
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo números y retroceso
@@ -142,6 +166,9 @@ namespace Capa_Presentacion_Proyecto_Final
             }
         }
 
+        /// <summary>
+        /// Solo permite ingresar números en el campo de salario base.
+        /// </summary>
         private void txtSalariobase_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permitir solo números y retroceso

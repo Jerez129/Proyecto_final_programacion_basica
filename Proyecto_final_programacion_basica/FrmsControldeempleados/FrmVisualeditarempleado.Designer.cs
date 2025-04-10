@@ -168,12 +168,10 @@
             // 
             // txtNombreeditar
             // 
-            txtNombreeditar.Enabled = false;
             txtNombreeditar.Location = new Point(175, 104);
             txtNombreeditar.Name = "txtNombreeditar";
             txtNombreeditar.Size = new Size(233, 27);
             txtNombreeditar.TabIndex = 36;
-            //txtNombreeditar.TextChanged += txtNombreeditar_TextChanged;
             txtNombreeditar.KeyPress += txtNombreeditar_KeyPress;
             // 
             // lbIdgeneroeditar

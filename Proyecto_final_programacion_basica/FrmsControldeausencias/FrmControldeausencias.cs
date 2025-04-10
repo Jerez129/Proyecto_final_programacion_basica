@@ -13,6 +13,11 @@ namespace Capa_Presentacion_Proyecto_Final
             InitializeComponent();
             MostrarEmpleadosbasico();
         }
+
+
+        /// <summary>
+        /// Muestra la lista de empleados básicos en el DataGridView.
+        /// </summary>
         private void MostrarEmpleadosbasico()
         {
             CN_Control_Ausencias CN_Ausencias = new CN_Control_Ausencias();
@@ -20,13 +25,16 @@ namespace Capa_Presentacion_Proyecto_Final
             dgvEmpleadosbasico.DataSource = empleados;
         }
 
+
         private void FrmControldeausencias_Load_1(object sender, EventArgs e)
         {
 
 
 
         }
-
+        /// <summary>
+        /// Abre el formulario para registrar una ausencia para el empleado seleccionado.
+        /// </summary>
         private void btnVisualRegistrarausencia_Click(object sender, EventArgs e)
         {
             if (dgvEmpleadosbasico.SelectedRows.Count > 0) // Verifica que haya una fila seleccionada
@@ -49,6 +57,9 @@ namespace Capa_Presentacion_Proyecto_Final
             }
         }
 
+        /// <summary>
+        /// Vuelve al formulario anterior de entrada de ausencias.
+        /// </summary>
         private void btnVolver_Click(object sender, EventArgs e)
         {
             FrmEntradaausencias frmEntradaausencias = new FrmEntradaausencias();

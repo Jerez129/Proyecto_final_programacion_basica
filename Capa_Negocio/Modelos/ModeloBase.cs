@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Capa_Negocio
-{
+{  //TODO: Aplicar metodo virtuar paraa la validación de datos a la hora de trabajar su inserción .
     public abstract class ModeloBase
     {
         public virtual bool Validacion(out string mensaje)
@@ -14,8 +14,6 @@ namespace Capa_Negocio
 
             mensaje = null;
             // Implementación de la validación básica
-            // Aquí puedes agregar la lógica común para validar los modelos
-            // Por ejemplo, verificar si los campos obligatorios están completos
             return true; // Retorna true si la validación es exitosa
         }
 
@@ -23,8 +21,6 @@ namespace Capa_Negocio
         {
             mensaje = null;
             // Implementación de la validación básica
-            // Aquí puedes agregar la lógica común para validar los modelos
-            // Por ejemplo, verificar si los campos obligatorios están completos
             return true; // Retorna true si la validación es exitosa
         }
     }

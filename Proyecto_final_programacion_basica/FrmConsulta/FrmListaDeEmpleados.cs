@@ -23,9 +23,13 @@ namespace Capa_Presentacion.FrmConsulta
         }
         private DataTable tablaEmpleados;
 
+
+        /// <summary>
+        /// Método para listar los empleados y asignarlos al DataGridView.
+        /// </summary>
         private void ListarEmpleado()
         {
-            CN_Control_Empleados empleado = new CN_Control_Empleados();
+            CN_Listar_Empleados empleado = new CN_Listar_Empleados();
             tablaEmpleados = empleado.Mostrar(); // Aquí asignas a la variable global
             dgvListadeempleados.DataSource = tablaEmpleados;
             dgvListadeempleados.Columns["id_Departamento"].Visible = false;
@@ -33,6 +37,9 @@ namespace Capa_Presentacion.FrmConsulta
             dgvListadeempleados.Columns["id_Genero"].Visible = false;
         }
 
+        /// <summary>
+        /// Método para limpiar los campos de búsqueda y filtros.
+        /// </summary>
         private void limpiarcampos()
         {
             txtBuscarEmpleado.Clear();
@@ -42,11 +49,15 @@ namespace Capa_Presentacion.FrmConsulta
             dtpFechaMaxima.Value = DateTime.Now;
             chkFiltrarFecha.Checked = false;
         }
+        /// <summary>
+        /// Evento que se ejecuta cuando el formulario se carga. 
+        /// Carga los datos para los filtros y configura el formulario.
+        /// </summary>
         private void FrmListaDeEmpleados_Load(object sender, EventArgs e)
 
         {
             SetPlaceholder(txtBuscarEmpleado, "Buscar Empleado por Nombre");
-            CN_Control_Empleados empleado = new CN_Control_Empleados();
+            CN_Listar_Empleados empleado = new CN_Listar_Empleados();
 
             cbGenero.DataSource = empleado.MostrarGenero();
             cbGenero.DisplayMember = "MostrarGenero"; // Mostrar "Masculino" o "Femenino"
@@ -58,6 +69,9 @@ namespace Capa_Presentacion.FrmConsulta
             cbDepartamento.ValueMember = "id_Departamento"; // Nombre de la columna que se usará como valor
             cbDepartamento.SelectedIndex = -1; // No seleccionar ningún ítem por defecto
         }
+        /// <summary>
+        /// Método para eliminar el marcador de posición del campo de texto cuando tiene foco.
+        /// </summary>
         private void RemovePlaceholder(TextBox textBox, string placeholder)
         {
             if (textBox.Text == placeholder)
@@ -67,7 +81,9 @@ namespace Capa_Presentacion.FrmConsulta
             }
         }
 
-        // Agregar el marcador de posición si el campo está vacío
+        /// <summary>
+        /// Método para agregar el marcador de posición si el campo está vacío.
+        /// </summary>
         private void AddPlaceholder(TextBox textBox, string placeholder)
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
@@ -77,6 +93,9 @@ namespace Capa_Presentacion.FrmConsulta
             }
         }
 
+        /// <summary>
+        /// Configura el marcador de posición para el campo de texto.
+        /// </summary>
         private void SetPlaceholder(TextBox textBox, string placeholder)
         {
             textBox.Text = placeholder;
@@ -84,7 +103,9 @@ namespace Capa_Presentacion.FrmConsulta
             textBox.GotFocus += (sender, e) => RemovePlaceholder(sender as TextBox, placeholder);
             textBox.LostFocus += (sender, e) => AddPlaceholder(sender as TextBox, placeholder);
         }
-
+        /// <summary>
+        /// Método para filtrar los empleados según los criterios seleccionados en los controles del formulario.
+        /// </summary>
         private void FiltrarEmpleados()
         {
             if (tablaEmpleados == null) return;
@@ -124,6 +145,10 @@ namespace Capa_Presentacion.FrmConsulta
 
             dgvListadeempleados.DataSource = vista;
         }
+        /// <summary>
+        /// Métodos que se ejecutan cuando se insertan datos a los txt,dtp,cb. 
+        /// Estos eventos activan el filtrado de los datos.
+        /// </summary>
         private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e)
         {
             FiltrarEmpleados();
@@ -159,6 +184,11 @@ namespace Capa_Presentacion.FrmConsulta
             limpiarcampos();
         }
 
+
+        /// <summary>
+        /// Método para exportar los datos filtrados a un archivo Excel.
+        /// Utiliza la biblioteca ClosedXML para crear el archivo Excel.
+        /// </summary>
         private void btnExportarexcel_Click(object sender, EventArgs e)
         {
             // Crear un nuevo archivo de Excel

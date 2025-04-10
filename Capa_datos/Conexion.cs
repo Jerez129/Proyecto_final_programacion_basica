@@ -6,7 +6,7 @@ namespace Conexion
 {
     public class CD_Conexion
     {
-        public SqlConnection Conexion = new SqlConnection("Server=RICARDO\\LOSER1; Database=BD_Empleados; Integrated Security=true");
+        public SqlConnection Conexion = new SqlConnection("Server=.; Database=BD_Empleados; Integrated Security=true");
         //esta es la cadena de conexion a la base de datos
         public SqlConnection AbrirConexion()
         {
